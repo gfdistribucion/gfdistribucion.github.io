@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nombre_Empresa — Consumibles para Hostelería · Barcelona</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Biryani:wght@300;400;500;600;700&family=Tenor+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy:     #072e51;
@@ -20,7 +20,7 @@
   }
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
-  body { font-family:'Inter',sans-serif; color:var(--navy); overflow-x:hidden; }
+  body { font-family:'Biryani',sans-serif; color:var(--navy); overflow-x:hidden; }
 
   /* ── NAV ── */
   nav {
@@ -32,7 +32,7 @@
     border-bottom:1px solid rgba(173,220,255,0.1);
   }
   .nav-logo {
-    font-family:'Cormorant Garamond',serif; font-size:1.45rem; font-weight:700;
+    font-family:'Tenor Sans',sans-serif; font-size:1.45rem; font-weight:700;
     color:var(--white); display:flex; align-items:center; gap:0.55rem;
   }
   .nav-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
@@ -59,7 +59,7 @@
   .eyebrow-light { color:rgba(173,220,255,0.55); }
   .eyebrow-light::after { background:rgba(173,220,255,0.25); }
   .page-title {
-    font-family:'Cormorant Garamond',serif;
+    font-family:'Tenor Sans',sans-serif;
     font-size:clamp(2.2rem,3.2vw,3.6rem); font-weight:700;
     line-height:1.08; color:var(--navy); margin-bottom:1.4rem;
   }
@@ -92,7 +92,7 @@
   }
   .inicio-tag::before { content:''; width:26px; height:1px; background:var(--gold); }
   .inicio-title {
-    font-family:'Cormorant Garamond',serif;
+    font-family:'Tenor Sans',sans-serif;
     font-size:clamp(3rem,4.5vw,5rem); font-weight:700;
     line-height:1.0; color:var(--white); margin-bottom:2rem; letter-spacing:-0.01em;
   }
@@ -176,9 +176,10 @@
     color:var(--gold); font-weight:600; margin-bottom:0.35rem;
   }
   .group-name {
-    font-family:'Cormorant Garamond',serif; font-size:0.98rem; font-weight:600;
+    font-family:'Tenor Sans',sans-serif; font-size:0.98rem; font-weight:600;
     color:var(--navy); line-height:1.3;
   }
+  .group-label { display:none; }
   /* section divider label */
   .group-section-header {
     grid-column:1/-1;
@@ -211,7 +212,7 @@
     color:var(--gold); font-weight:600; margin-bottom:0.35rem;
   }
   .pcard-name {
-    font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600;
+    font-family:'Tenor Sans',sans-serif; font-size:1rem; font-weight:600;
     color:var(--navy); margin-bottom:0.3rem;
   }
   .pcard-desc { font-size:0.77rem; color:var(--muted); line-height:1.5; }
@@ -270,8 +271,12 @@
     color:var(--navy); opacity:0.5; transition:opacity .22s;
   }
   .mate-group-card:hover .mate-group-icon { opacity:0.85; }
+  .mate-group-image {
+    width:36px; height:36px; flex-shrink:0; margin-top:0.1rem;
+    object-fit:cover; border-radius:8px;
+  }
   .mate-group-name {
-    font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600;
+    font-family:'Tenor Sans',sans-serif; font-size:1rem; font-weight:600;
     color:var(--navy); margin-bottom:0.2rem;
   }
   .mate-group-sub { font-size:0.76rem; color:var(--muted); line-height:1.45; }
@@ -321,7 +326,7 @@
     padding:5rem 4.5rem 5rem 4rem; position:relative; z-index:1;
   }
   .cform-title {
-    font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:700;
+    font-family:'Tenor Sans',sans-serif; font-size:1.5rem; font-weight:700;
     color:var(--white); margin-bottom:0.4rem;
   }
   .cform-sub { font-size:0.82rem; color:rgba(173,220,255,0.42); margin-bottom:1.8rem; line-height:1.5; }
@@ -333,7 +338,7 @@
   .fg input,.fg textarea,.fg select {
     width:100%; padding:0.7rem 0.9rem;
     border:1px solid rgba(173,220,255,0.14); border-radius:2px;
-    font-family:'Inter',sans-serif; font-size:0.87rem; color:var(--white);
+    font-family:'Biryani',sans-serif; font-size:0.87rem; color:var(--white);
     background:rgba(255,255,255,0.05); outline:none; transition:border-color .2s;
   }
   .fg input::placeholder,.fg textarea::placeholder { color:rgba(173,220,255,0.22); }
@@ -344,7 +349,7 @@
   .fbtn {
     width:100%; padding:0.88rem; background:var(--gold); color:var(--white);
     border:none; border-radius:2px; cursor:pointer;
-    font-family:'Inter',sans-serif; font-size:0.87rem; font-weight:600;
+    font-family:'Biryani',sans-serif; font-size:0.87rem; font-weight:600;
     letter-spacing:0.05em; transition:background .2s; margin-top:0.4rem;
   }
   .fbtn:hover { background:var(--gold-lt); }
@@ -403,10 +408,10 @@
     <div class="inicio-meta">Barcelona · Más de 200 referencias</div>
   </div>
   <div class="inicio-right">
-    <div class="hero-photo"><img src="HVCUPB04__2_.png" alt="Vasos café"><div class="hero-photo-label">Vasos café</div></div>
-    <div class="hero-photo"><img src="HCCK0003__2_.png" alt="Envases take away"><div class="hero-photo-label">Envases</div></div>
+    <div class="hero-photo"><img src="HPREK002 (2).png" alt="Vasos café"><div class="hero-photo-label">Vasos café</div></div>
+    <div class="hero-photo"><img src="HCCK0003 (2).png" alt="Envases take away"><div class="hero-photo-label">Envases</div></div>
     <div class="hero-photo"><img src="HSR30303__2_.png" alt="Servilletas"><div class="hero-photo-label">Servilletas</div></div>
-    <div class="hero-photo"><img src="HPLME002__2_.png" alt="Accesorios"><div class="hero-photo-label">Accesorios</div></div>
+    <div class="hero-photo"><img src="MKMBPN01.jpg" alt="Accesorios"><div class="hero-photo-label">Accesorios</div></div>
   </div>
 </section>
 
@@ -425,20 +430,15 @@
 
     <div class="group-card">
       <!-- Tapa / lid icon -->
-      <img src="HVCUPB04__2_.png" alt="Vasos" class="group-card-photo">
-      <div class="group-label">Vasos</div>
-      <!-- <div class="group-name">Vasos</div> -->
-    </div>
-
-    <div class="group-card">
+      <img src="HVCUPB04 (2).png" alt="Vasos" class="group-card-photo">
+      <div class="group-name">Vasos</div>
       <!-- Tapa / lid icon -->
       <svg class="group-card-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <ellipse cx="22" cy="14" rx="16" ry="5"/>
         <path d="M6 14 Q6 20 22 20 Q38 20 38 14"/>
         <circle cx="22" cy="12" r="2" fill="currentColor" stroke="none" opacity=".4"/>
       </svg>
-      <div class="group-label">Tapas para vasos</div>
-      <!--<div class="group-name">Tapas vasos</div>-->
+      <div class="group-name">Tapas para vasos</div>
     </div>
 
     <div class="group-card">
@@ -448,8 +448,7 @@
         <path d="M8 16 Q8 13 22 13 Q36 13 36 16"/>
         <path d="M8 16 L36 16"/>
       </svg>
-      <div class="group-label">Fundas para vasos</div>
-      <!--<div class="group-name">Fundas vasos</div>-->
+      <div class="group-name">Fundas para vasos</div>
     </div>
 
     <div class="group-card">
@@ -460,14 +459,12 @@
         <line x1="22" y1="18" x2="22" y2="36"/>
         <line x1="8" y1="27" x2="36" y2="27"/>
       </svg>
-      <div class="group-label">Portavasos</div>
-      <!--<div class="group-name">Portavasos</div>-->
+      <div class="group-name">Portavasos</div>
     </div>
 
     <div class="group-card">
       <img src="HPLME002__2_.png" alt="Palitos removedores" class="group-card-photo">
-      <div class="group-label">Palitos removedores y cucharillas</div>
-      <!--<div class="group-name">Palitos removedores</div>-->
+      <div class="group-name">Palitos removedores y cucharillas</div>
     </div>
 
     <!-- SERVICIO DE MESA -->
@@ -773,11 +770,7 @@
     <div class="mate-group-grid">
 
       <div class="mate-group-card">
-        <svg class="mate-group-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10 14 Q10 28 18 28 Q26 28 26 14"/>
-          <ellipse cx="18" cy="14" rx="8" ry="4"/>
-          <line x1="18" y1="4" x2="18" y2="10"/>
-        </svg>
+        <img src="images/mate/mates.jpg" alt="Mates" class="mate-group-image">
         <div>
           <div class="mate-group-name">Mates</div>
           <div class="mate-group-sub">Varios colores y formatos</div>
@@ -785,11 +778,7 @@
       </div>
 
       <div class="mate-group-card">
-        <svg class="mate-group-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="4" x2="18" y2="32"/>
-          <ellipse cx="18" cy="30" rx="4" ry="3"/>
-          <line x1="14" y1="30" x2="22" y2="30"/>
-        </svg>
+        <img src="images/mate/bombillas.jpg" alt="Bombillas" class="mate-group-image">
         <div>
           <div class="mate-group-name">Bombillas</div>
           <div class="mate-group-sub">Acero inoxidable, variedad de tamaños y formas</div>
@@ -797,11 +786,7 @@
       </div>
 
       <div class="mate-group-card">
-        <svg class="mate-group-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="10" y="6" width="16" height="24" rx="8"/>
-          <line x1="18" y1="30" x2="18" y2="34"/>
-          <ellipse cx="18" cy="10" rx="4" ry="2" opacity=".35"/>
-        </svg>
+        <img src="images/mate/termos.jpg" alt="Termos" class="mate-group-image">
         <div>
           <div class="mate-group-name">Termos</div>
           <div class="mate-group-sub">Para mate y tereré</div>
@@ -809,11 +794,7 @@
       </div>
 
       <div class="mate-group-card">
-        <svg class="mate-group-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="18" cy="18" r="10"/>
-          <path d="M14 18 H22 M18 14 V22"/>
-          <circle cx="18" cy="18" r="3" stroke-dasharray="2 2" opacity=".4"/>
-        </svg>
+        <img src="images/mate/tapones.jpg" alt="Tapones" class="mate-group-image">
         <div>
           <div class="mate-group-name">Tapones</div>
           <div class="mate-group-sub">Repuestos y pico cebador</div>
@@ -821,12 +802,7 @@
       </div>
 
       <div class="mate-group-card">
-        <svg class="mate-group-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 10 H28 L26 28 Q26 30 18 30 Q10 30 10 28 Z"/>
-          <line x1="8" y1="10" x2="28" y2="10"/>
-          <line x1="12" y1="10" x2="10" y2="6"/>
-          <line x1="24" y1="10" x2="26" y2="6"/>
-        </svg>
+        <img src="images/mate/yerberos.jpg" alt="Yerberos" class="mate-group-image">
         <div>
           <div class="mate-group-name">Yerberos</div>
           <div class="mate-group-sub">Contenedores para yerba</div>
@@ -834,11 +810,7 @@
       </div>
 
       <div class="mate-group-card">
-        <svg class="mate-group-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="6" y="14" width="24" height="18" rx="2"/>
-          <path d="M12 14 V10 Q12 6 18 6 Q24 6 24 10 V14"/>
-          <line x1="6" y1="20" x2="30" y2="20"/>
-        </svg>
+        <img src="images/mate/kit.jpg" alt="Kit" class="mate-group-image">
         <div>
           <div class="mate-group-name">Kit</div>
           <div class="mate-group-sub">Sets completos de mate y bombilla</div>
