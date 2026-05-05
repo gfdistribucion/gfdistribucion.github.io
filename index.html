@@ -20,7 +20,7 @@
   }
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
-  body { font-family:'Biryani',sans-serif; color:var(--navy); overflow-x:hidden; }
+  body { font-family:'Biryani',sans-serif; color:var(--navy); overflow-x:hidden; background:var(--white); }
 
   /* ── NAV ── */
   nav {
@@ -67,19 +67,17 @@
   .page-desc {
     font-size:0.95rem; line-height:1.78; font-weight:300; color:var(--muted);
   }
-  .page-desc-sky { color:rgba(173,220,255,0.62); }
+  .page-desc-sky { color:var(--muted); }
 
   /* ── INICIO ── */
   #inicio {
     min-height:100vh; padding-top:64px;
-    background:var(--navy);
+    background:var(--white);
     display:grid; grid-template-columns:1fr 1fr;
     position:relative; overflow:hidden;
   }
   #inicio::before {
-    content:''; position:absolute; inset:0; pointer-events:none;
-    background:repeating-linear-gradient(-55deg,transparent,transparent 80px,
-      rgba(173,220,255,0.018) 80px,rgba(173,220,255,0.018) 81px);
+    display:none;
   }
   .inicio-left {
     display:flex; flex-direction:column; justify-content:center;
@@ -94,19 +92,18 @@
   .inicio-title {
     font-family:'Tenor Sans',sans-serif;
     font-size:clamp(3rem,4.5vw,5rem); font-weight:700;
-    line-height:1.0; color:var(--white); margin-bottom:2rem; letter-spacing:-0.01em;
+    line-height:1.0; color:var(--navy); margin-bottom:2rem; letter-spacing:-0.01em;
   }
-  .inicio-title em { font-style:italic; color:var(--sky); }
   .inicio-desc {
     font-size:0.97rem; line-height:1.8; font-weight:300;
-    color:rgba(173,220,255,0.68); max-width:420px;
+    color:var(--muted); max-width:420px;
   }
   .inicio-desc p { margin-bottom:0.9rem; }
   .inicio-desc p:last-child { margin-bottom:0; }
   .inicio-meta {
     margin-top:3rem; padding-top:2.5rem;
     border-top:1px solid rgba(173,220,255,0.1);
-    font-size:0.77rem; color:rgba(173,220,255,0.35); letter-spacing:0.06em;
+    font-size:0.77rem; color:var(--muted); letter-spacing:0.06em;
   }
   .inicio-right {
     display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr;
@@ -120,9 +117,9 @@
   .hero-photo:hover img { transform:scale(1.05); filter:brightness(0.92) saturate(1); }
   .hero-photo-label {
     position:absolute; bottom:0; left:0; right:0; padding:0.55rem 0.9rem;
-    background:linear-gradient(to top,rgba(7,46,81,.82),transparent);
+    background:linear-gradient(to top,rgba(255,255,255,0.92),transparent);
     font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase;
-    color:rgba(255,255,255,0.72); font-weight:500;
+    color:var(--navy); font-weight:500;
   }
   @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
   .inicio-left > * { animation:fadeUp .6s ease both; }
@@ -191,7 +188,7 @@
 
   /* ── HORECA PRODUCTOS ── */
   #horeca-productos {
-    background:var(--sky-pale);
+    background:var(--white);
     padding:6rem 4.5rem;
   }
   .products-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem; }
@@ -218,11 +215,11 @@
   .pcard-desc { font-size:0.77rem; color:var(--muted); line-height:1.5; }
   .catalog-row {
     margin-top:2rem; padding:1.5rem 2rem;
-    background:var(--navy); border-radius:3px;
+    background:rgba(7,46,81,0.06); border-radius:3px;
     display:flex; align-items:center; justify-content:space-between; gap:2rem;
   }
-  .catalog-row p { font-size:0.88rem; color:rgba(173,220,255,0.65); font-weight:300; }
-  .catalog-row strong { color:var(--white); font-weight:500; }
+  .catalog-row p { font-size:0.88rem; color:var(--navy); font-weight:300; }
+  .catalog-row strong { color:var(--navy); font-weight:500; }
   .btn-sm {
     font-size:0.8rem; font-weight:600; letter-spacing:0.05em;
     background:var(--gold); color:var(--white); text-decoration:none;
@@ -281,7 +278,7 @@
   }
   .mate-group-sub { font-size:0.76rem; color:var(--muted); line-height:1.45; }
   .mate-note {
-    font-size:0.82rem; color:var(--muted); line-height:1.65;
+    font-size:0.82rem; color:var(--navy); line-height:1.65;
     padding:1rem 1.2rem; border-left:3px solid var(--sky); background:var(--sky-pale);
     border-radius:0 3px 3px 0;
   }
@@ -289,28 +286,24 @@
   /* ── CONTACTO ── */
   #contacto {
     min-height:100vh; padding-top:64px;
-    background:var(--navy);
+    background:var(--white);
     display:grid; grid-template-columns:1fr 1fr;
     position:relative; overflow:hidden;
   }
-  #contacto::before {
-    content:''; position:absolute; inset:0; pointer-events:none;
-    background:repeating-linear-gradient(-55deg,transparent,transparent 80px,
-      rgba(173,220,255,0.015) 80px,rgba(173,220,255,0.015) 81px);
-  }
+  #contacto::before { display:none; }
   .contacto-left {
     display:flex; flex-direction:column; justify-content:center;
     padding:5rem 4rem 5rem 4.5rem; position:relative; z-index:1;
-    border-right:1px solid rgba(173,220,255,0.08);
+    border-right:1px solid rgba(7,46,81,0.08); background:rgba(255,255,255,0.98);
   }
-  .contacto-left .page-desc { color:rgba(173,220,255,0.55); margin-bottom:2.5rem; max-width:400px; }
+  .contacto-left .page-desc { color:var(--muted); margin-bottom:2.5rem; max-width:400px; }
   .contact-methods { display:flex; flex-direction:column; gap:0.9rem; }
   .citem {
     display:flex; align-items:center; gap:1.1rem; text-decoration:none;
-    background:rgba(255,255,255,0.04); border:1px solid rgba(173,220,255,0.1);
+    background:rgba(255,255,255,0.9); border:1px solid rgba(7,46,81,0.08);
     padding:1rem 1.3rem; border-radius:3px; transition:border-color .2s, background .2s;
   }
-  .citem:hover { border-color:rgba(173,220,255,0.3); background:rgba(173,220,255,0.06); }
+  .citem:hover { border-color:rgba(7,46,81,0.16); background:rgba(7,46,81,0.04); }
   .cicon {
     width:40px; height:40px; border-radius:50%; display:flex; align-items:center;
     justify-content:center; font-size:0.92rem; flex-shrink:0;
@@ -318,8 +311,8 @@
   .cicon-wa  { background:#25D366; }
   .cicon-mail{ background:var(--gold); }
   .cicon-tel { background:var(--mid); border:1px solid rgba(173,220,255,0.12); }
-  .clabel { font-size:0.61rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(173,220,255,0.38); margin-bottom:0.1rem; }
-  .cvalue { font-size:0.9rem; font-weight:500; color:var(--white); }
+  .clabel { font-size:0.61rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(7,46,81,0.65); margin-bottom:0.1rem; }
+  .cvalue { font-size:0.9rem; font-weight:500; color:var(--navy); }
 
   .contacto-right {
     display:flex; flex-direction:column; justify-content:center;
@@ -327,24 +320,24 @@
   }
   .cform-title {
     font-family:'Tenor Sans',sans-serif; font-size:1.5rem; font-weight:700;
-    color:var(--white); margin-bottom:0.4rem;
+    color:var(--navy); margin-bottom:0.4rem;
   }
-  .cform-sub { font-size:0.82rem; color:rgba(173,220,255,0.42); margin-bottom:1.8rem; line-height:1.5; }
+  .cform-sub { font-size:0.82rem; color:var(--muted); margin-bottom:1.8rem; line-height:1.5; }
   .fg { margin-bottom:1rem; }
   .fg label {
     display:block; font-size:0.64rem; text-transform:uppercase; letter-spacing:0.09em;
-    color:rgba(173,220,255,0.38); margin-bottom:0.38rem; font-weight:600;
+    color:rgba(7,46,81,0.7); margin-bottom:0.38rem; font-weight:600;
   }
   .fg input,.fg textarea,.fg select {
     width:100%; padding:0.7rem 0.9rem;
-    border:1px solid rgba(173,220,255,0.14); border-radius:2px;
-    font-family:'Biryani',sans-serif; font-size:0.87rem; color:var(--white);
-    background:rgba(255,255,255,0.05); outline:none; transition:border-color .2s;
+    border:1px solid rgba(7,46,81,0.14); border-radius:2px;
+    font-family:'Biryani',sans-serif; font-size:0.87rem; color:var(--navy);
+    background:rgba(243,247,255,0.95); outline:none; transition:border-color .2s;
   }
-  .fg input::placeholder,.fg textarea::placeholder { color:rgba(173,220,255,0.22); }
-  .fg select { color:rgba(255,255,255,0.78); }
-  .fg select option { background:var(--navy); color:var(--white); }
-  .fg input:focus,.fg textarea:focus,.fg select:focus { border-color:rgba(173,220,255,0.38); }
+  .fg input::placeholder,.fg textarea::placeholder { color:rgba(7,46,81,0.45); }
+  .fg select { color:var(--navy); }
+  .fg select option { background:var(--white); color:var(--navy); }
+  .fg input:focus,.fg textarea:focus,.fg select:focus { border-color:rgba(7,46,81,0.28); }
   .fg textarea { resize:vertical; min-height:75px; }
   .fbtn {
     width:100%; padding:0.88rem; background:var(--gold); color:var(--white);
@@ -356,9 +349,9 @@
 
   .footer-strip {
     position:absolute; bottom:0; left:0; right:0;
-    padding:1rem 4.5rem; border-top:1px solid rgba(173,220,255,0.07);
+    padding:1rem 4.5rem; border-top:1px solid rgba(7,46,81,0.08);
     display:flex; justify-content:space-between; align-items:center;
-    font-size:0.71rem; color:rgba(173,220,255,0.22);
+    font-size:0.71rem; color:rgba(7,46,81,0.45);
   }
 
   /* ── RESPONSIVE ── */
@@ -400,7 +393,7 @@
 <section id="inicio">
   <div class="inicio-left">
     <div class="inicio-tag">Distribuidor · Barcelona</div>
-    <h1 class="inicio-title">Consumibles<br>para<br><em>hostelería</em></h1>
+    <h1 class="inicio-title">Consumibles<br>para<br>hostelería</h1>
     <div class="inicio-desc">
       <p>Proveedor de desechables para cafeterías, bares y restaurantes. Gama completa de productos de un solo uso para el funcionamiento diario de tu establecimiento.</p>
       <p>Distribución mayorista directa en Barcelona, con precios competitivos y atención personalizada.</p>
@@ -842,9 +835,9 @@
 <!-- ═══════════════════════════ CONTACTO ═══════════════════════════ -->
 <section id="contacto">
   <div class="contacto-left">
-    <div class="eyebrow eyebrow-light">Contacto</div>
-    <h2 class="page-title page-title-w">Contacto</h2>
-    <p class="page-desc page-desc-sky">Para solicitar la lista de precios, consultar disponibilidad o cualquier otra gestión. Puedes contactarnos por el canal que prefieras.</p>
+    <div class="eyebrow">Contacto</div>
+    <h2 class="page-title">Contacto</h2>
+    <p class="page-desc">Para solicitar la lista de precios, consultar disponibilidad o cualquier otra gestión. Puedes contactarnos por el canal que prefieras.</p>
     <div class="contact-methods">
       <a href="https://wa.me/34600000000" target="_blank" class="citem">
         <div class="cicon cicon-wa">💬</div>
