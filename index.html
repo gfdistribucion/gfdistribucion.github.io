@@ -151,6 +151,7 @@
     background:var(--white);
     padding:1.6rem 1.4rem 1.8rem;
     display:flex; flex-direction:column;
+    align-items:center; text-align:center;
     cursor:default;
   }
   .group-card:hover { /* background:var(--sky-pale); */ }
@@ -161,7 +162,7 @@
   }
   .group-card:hover .group-card-icon { opacity:0.9; }
   .group-card-photo {
-    width:100%; height:100%; object-fit:cover;
+    width:100%; height:180px; object-fit:cover;
     border-radius:2px; margin-bottom:1.1rem;
     transition:filter .3s, transform .3s;
   }
@@ -182,8 +183,8 @@
     grid-column:1/-1;
     padding:0.7rem 1.4rem;
     background:var(--navy);
-    font-size:0.63rem; letter-spacing:0.16em; text-transform:uppercase;
-    color:rgba(173,220,255,0.55); font-weight:600;
+    font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase;
+    color:rgba(173,220,255,0.65); font-weight:700;
   }
 
   /* ── HORECA PRODUCTOS ── */
@@ -198,10 +199,14 @@
   .pcard {
     background:var(--white); border-radius:3px; overflow:hidden;
     border:1px solid var(--border); transition:transform .28s, box-shadow .28s;
+    display:flex; flex-direction:column;
   }
   .pcard:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(7,46,81,0.09); }
-  .pcard-img { width:175px; height:175px; overflow:hidden; background:var(--sky-pale); }
-  .pcard-img img { width:100%; height:100%; object-fit:contain; transition:transform .5s; }
+  .pcard-img {
+    width:100%; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;
+    overflow:hidden; background:var(--sky-pale);
+  }
+  .pcard-img img { max-width:100%; max-height:100%; object-fit:contain; transition:transform .5s; }
   .pcard:hover .pcard-img img { transform:scale(1.07); }
   .pcard-body { padding:1.1rem 1.2rem 1.4rem; }
   .pcard-cat {
@@ -259,7 +264,7 @@
   }
   .mate-group-card {
     background:var(--white); padding:1.4rem 1.4rem 1.6rem;
-    display:flex; align-items:flex-start; gap:1rem;
+    display:flex; align-items:center; gap:1.4rem;
     transition:background .22s;
   }
   .mate-group-card:hover { background:var(--sky-pale); }
@@ -269,8 +274,8 @@
   }
   .mate-group-card:hover .mate-group-icon { opacity:0.85; }
   .mate-group-image {
-    width:80px; height:80px; flex-shrink:0; margin-top:0;
-    object-fit:cover; border-radius:10px;
+    width:100px; height:100px; flex-shrink:0; margin-top:0;
+    object-fit:cover; border-radius:12px;
   }
   .mate-group-name {
     font-family:'Tenor Sans',sans-serif; font-size:1rem; font-weight:600;
@@ -768,19 +773,22 @@
   <div class="contacto-right">
     <div class="cform-title">Solicitar catálogo</div>
     <div class="cform-sub">Completa el formulario y te enviamos la lista de precios completa.</div>
-    <div class="fg"><label>Establecimiento</label><input type="text" placeholder="Nombre del local"></div>
-    <div class="fg"><label>Nombre</label><input type="text" placeholder="Nombre y apellido"></div>
-    <div class="fg"><label>Email o WhatsApp</label><input type="text" placeholder="Para enviarte el catálogo"></div>
+  <form id="catalog-form">
+    <div class="fg"><label>Establecimiento</label><input type="text" name="establecimiento" placeholder="Nombre del local"></div>
+    <div class="fg"><label>Nombre</label><input type="text" name="nombre" placeholder="Nombre y apellido"></div>
+    <div class="fg"><label>Email o WhatsApp</label><input type="text" name="contacto" placeholder="Para enviarte el catálogo"></div>
+    <div class="fg"><label>Ciudad</label><input type="text" name="ciudad" placeholder="Ciudad"></div>
     <div class="fg">
       <label>División de interés</label>
-      <select>
+      <select name="division">
         <option>HORECA — consumibles hostelería</option>
         <option>Mate</option>
         <option>Ambas</option>
       </select>
     </div>
-    <div class="fg"><label>Observaciones (opcional)</label><textarea></textarea></div>
-    <button class="fbtn" onclick="alert('Solicitud recibida. Nos pondremos en contacto pronto.')">Enviar →</button>
+    <div class="fg"><label>Observaciones (opcional)</label><textarea name="observaciones"></textarea></div>
+    <button type="submit" class="fbtn">Enviar →</button>
+  </form>
   </div>
   <div class="footer-strip">
     <span>© 2025 Nombre_Empresa · Barcelona</span>
@@ -804,9 +812,22 @@
     });
   }, { threshold: 0.3 });
   sections.forEach(s => observer.observe(s));
+
+  const catalogForm = document.getElementById('catalog-form');
+  if (catalogForm) {
+    catalogForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(catalogForm);
+      const subject = 'Solicitud de catálogo';
+      const body = `Establecimiento: ${formData.get('establecimiento') || ''}\nNombre: ${formData.get('nombre') || ''}\nContacto: ${formData.get('contacto') || ''}\nCiudad: ${formData.get('ciudad') || ''}\nDivisión de interés: ${formData.get('division') || ''}\nObservaciones: ${formData.get('observaciones') || ''}`;
+      const mailto = `mailto:gfernandez.dist@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+  }
 </script>
 
 </body>
 </html>
+
 
 
