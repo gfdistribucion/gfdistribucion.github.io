@@ -162,12 +162,13 @@
   }
   .group-card:hover .group-card-icon { opacity:0.9; }
   .group-card-photo {
-    width:100%; height:180px; object-fit:cover;
-    border-radius:2px; margin-bottom:1.1rem;
-    transition:filter .3s, transform .3s;
+    width:100%; height:180px; object-fit:contain;
+    background:var(--sky-pale); border-radius:2px; margin-bottom:1.1rem;
+    transition:transform .3s;
+    display:block;
   }
-  .group-card:hover .group-card-photo { 
-    transform:scale(1.05);
+  .group-card:hover .group-card-photo {
+    transform:scale(1.02);
   }
   .group-label {
     font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase;
