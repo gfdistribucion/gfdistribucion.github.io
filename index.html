@@ -142,7 +142,7 @@
     display:grid;
     grid-template-columns:repeat(5,1fr);
     gap:1px;
-    background:var(--border);
+    background:var(--white);
     border:1px solid var(--border);
     border-radius:4px;
     overflow:hidden;
@@ -151,10 +151,9 @@
     background:var(--white);
     padding:1.6rem 1.4rem 1.8rem;
     display:flex; flex-direction:column;
-    transition:background .22s;
     cursor:default;
   }
-  .group-card:hover { background:var(--sky-pale); }
+  .group-card:hover { /* background:var(--sky-pale); */ }
   .group-card-icon {
     width:44px; height:44px; margin-bottom:1.1rem; flex-shrink:0;
     color:var(--navy); opacity:0.55;
@@ -164,10 +163,11 @@
   .group-card-photo {
     width:100%; height:100%; object-fit:cover;
     border-radius:2px; margin-bottom:1.1rem;
-    filter:saturate(0.7) brightness(0.9);
-    transition:filter .3s;
+    transition:filter .3s, transform .3s;
   }
-  .group-card:hover .group-card-photo { filter:saturate(1) brightness(1); }
+  .group-card:hover .group-card-photo { 
+    transform:scale(1.05);
+  }
   .group-label {
     font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase;
     color:var(--gold); font-weight:600; margin-bottom:0.35rem;
@@ -379,7 +379,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><div class="nav-dot"></div>Nombre_Empresa</div>
+  <div class="nav-logo"><img src="/img/logo.png" alt="Logo Empresa" style="height:40px; width:auto;"></div>
   <ul class="nav-links">
     <li><a href="#inicio">Inicio</a></li>
     <li><a href="#horeca">HORECA</a></li>
@@ -808,5 +808,6 @@
 
 </body>
 </html>
+
 
 
