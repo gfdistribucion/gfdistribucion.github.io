@@ -1,808 +1,770 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nombre_Empresa — Consumibles para Hostelería · Barcelona</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Biryani:wght@300;400;500;600;700&family=Tenor+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy:     #072e51;
-    --sky:      #addcff;
-    --white:    #ffffff;
-    --gold:     #ad8408;  
-    --gold-lt:  #c49a0a;
-    --sky-pale: #e8f5ff;
-    --mid:      #0d4a7a;
-    --muted:    rgba(7,46,81,0.5);
-    --border:   rgba(7,46,81,0.09);
-  }
-  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { font-family:'Biryani',sans-serif; color:var(--navy); overflow-x:hidden; background:var(--white); }
+  <html lang="es">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nombre_Empresa — Consumibles para Hostelería · Barcelona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@300;400;500;600;700&family=Tenor+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:     #072e51;
+      --sky:      #addcff;
+      --white:    #ffffff;
+      --gold:     #ad8408;  
+      --gold-lt:  #c49a0a;
+      --sky-pale: #e8f5ff;
+      --mid:      #0d4a7a;
+      --muted:    rgba(7,46,81,0.5);
+      --border:   rgba(7,46,81,0.09);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Biryani',sans-serif; color:var(--navy); overflow-x:hidden; background:var(--white); }
 
-  /* ── NAV ── */
-  nav {
-    position:fixed; top:0; left:0; right:0; z-index:300;
-    height:64px; display:flex; align-items:center; justify-content:space-between;
-    padding:0 4rem;
-    background:rgba(7,46,81,0.97);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(173,220,255,0.1);
-  }
-  .nav-logo {
-    font-family:'Tenor Sans',sans-serif; font-size:1.45rem; font-weight:700;
-    color:var(--white); display:flex; align-items:center; gap:0.55rem;
-  }
-  .nav-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
-  .nav-links { display:flex; gap:2.2rem; list-style:none; align-items:center; }
-  .nav-links a {
-    font-size:0.77rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:500;
-    color:rgba(255,255,255,0.55); text-decoration:none; transition:color .2s;
-  }
-  .nav-links a:hover, .nav-links a.active { color:var(--sky); }
-  .nav-catalog {
-    background:var(--gold); color:var(--white) !important;
-    padding:0.52rem 1.3rem; border-radius:2px; font-weight:600 !important;
-    transition:background .2s !important;
-  }
-  .nav-catalog:hover { background:var(--gold-lt) !important; }
+    /* ── NAV ── */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:300;
+      height:64px; display:flex; align-items:center; justify-content:space-between;
+      padding:0 4rem;
+      background:rgba(7,46,81,0.97);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(173,220,255,0.1);
+    }
+    .nav-logo {
+      font-family:'Tenor Sans',sans-serif; font-size:1.45rem; font-weight:700;
+      color:var(--white); display:flex; align-items:center; gap:0.55rem;
+    }
+    .nav-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+    .nav-links { display:flex; gap:2.2rem; list-style:none; align-items:center; }
+    .nav-links a {
+      font-size:0.77rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:500;
+      color:rgba(255,255,255,0.55); text-decoration:none; transition:color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color:var(--sky); }
+    .nav-catalog {
+      background:var(--gold); color:var(--white) !important;
+      padding:0.52rem 1.3rem; border-radius:2px; font-weight:600 !important;
+      transition:background .2s !important;
+    }
+    .nav-catalog:hover { background:var(--gold-lt) !important; }
 
-  /* ── SHARED ── */
-  .eyebrow {
-    font-size:0.67rem; letter-spacing:0.2em; text-transform:uppercase;
-    font-weight:600; color:var(--gold);
-    display:flex; align-items:center; gap:0.65rem; margin-bottom:1rem;
-  }
-  .eyebrow::after { content:''; width:32px; height:1px; background:var(--gold); opacity:0.5; }
-  .eyebrow-light { color:rgba(173,220,255,0.55); }
-  .eyebrow-light::after { background:rgba(173,220,255,0.25); }
-  .page-title {
-    font-family:'Tenor Sans',sans-serif;
-    font-size:clamp(2.2rem,3.2vw,3.6rem); font-weight:700;
-    line-height:1.08; color:var(--navy); margin-bottom:1.4rem;
-  }
-  .page-title-w { color:var(--white); }
-  .page-desc {
-    font-size:0.95rem; line-height:1.78; font-weight:300; color:var(--muted);
-  }
-  .page-desc-sky { color:var(--muted); }
+    /* ── SHARED ── */
+    .eyebrow {
+      font-size:0.67rem; letter-spacing:0.2em; text-transform:uppercase;
+      font-weight:600; color:var(--gold);
+      display:flex; align-items:center; gap:0.65rem; margin-bottom:1rem;
+    }
+    .eyebrow::after { content:''; width:32px; height:1px; background:var(--gold); opacity:0.5; }
+    .eyebrow-light { color:rgba(173,220,255,0.55); }
+    .eyebrow-light::after { background:rgba(173,220,255,0.25); }
+    .page-title {
+      font-family:'Tenor Sans',sans-serif;
+      font-size:clamp(2.2rem,3.2vw,3.6rem); font-weight:700;
+      line-height:1.08; color:var(--navy); margin-bottom:1.4rem;
+    }
+    .page-title-w { color:var(--white); }
+    .page-desc {
+      font-size:0.95rem; line-height:1.78; font-weight:300; color:var(--muted);
+    }
+    .page-desc-sky { color:var(--muted); }
 
-  /* ── INICIO ── */
-  #inicio {
-    min-height:100vh; padding-top:64px;
-    background:var(--white);
-    display:grid; grid-template-columns:1fr 1fr;
-    position:relative; overflow:hidden;
-  }
-  #inicio::before {
-    display:none;
-  }
-  .inicio-left {
-    display:flex; flex-direction:column; justify-content:center;
-    padding:5rem 3.5rem 5rem 4.5rem; position:relative; z-index:1;
-  }
-  .inicio-tag {
-    font-size:0.67rem; letter-spacing:0.18em; text-transform:uppercase;
-    font-weight:600; color:var(--gold);
-    display:flex; align-items:center; gap:0.65rem; margin-bottom:2rem;
-  }
-  .inicio-tag::before { content:''; width:26px; height:1px; background:var(--gold); }
-  .inicio-title {
-    font-family:'Tenor Sans',sans-serif;
-    font-size:clamp(3rem,4.5vw,5rem); font-weight:700;
-    line-height:1.0; color:var(--navy); margin-bottom:2rem; letter-spacing:-0.01em;
-  }
-  .inicio-desc {
-    font-size:0.97rem; line-height:1.8; font-weight:300;
-    color:var(--muted); max-width:420px;
-  }
-  .inicio-desc p { margin-bottom:0.9rem; }
-  .inicio-desc p:last-child { margin-bottom:0; }
-  .inicio-meta {
-    margin-top:3rem; padding-top:2.5rem;
-    border-top:1px solid rgba(173,220,255,0.1);
-    font-size:0.77rem; color:var(--muted); letter-spacing:0.06em;
-  }
-  .inicio-right {
-    display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr;
-    gap:3px; position:relative; z-index:1;
-  }
-  .hero-photo { overflow:hidden; position:relative; }
-  .hero-photo img {
-    width:100%; height:100%; object-fit:cover;
-    transition:transform .7s;
-  }
-  .hero-photo:hover img { transform:scale(1.05); }
-  .hero-photo-label {
-    position:absolute; bottom:0; left:0; right:0; padding:0.55rem 0.9rem;
-    background:linear-gradient(to top,rgba(255,255,255,0.92),transparent);
-    font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase;
-    color:var(--navy); font-weight:600;
-  }
-  @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
-  .inicio-left > * { animation:fadeUp .6s ease both; }
-  .inicio-left > *:nth-child(1){animation-delay:.1s}
-  .inicio-left > *:nth-child(2){animation-delay:.22s}
-  .inicio-left > *:nth-child(3){animation-delay:.34s}
-  .inicio-left > *:nth-child(4){animation-delay:.46s}
+    /* ── INICIO ── */
+    #inicio {
+      min-height:100vh; padding-top:64px;
+      background:var(--white);
+      display:grid; grid-template-columns:1fr 1fr;
+      position:relative; overflow:hidden;
+    }
+    #inicio::before {
+      display:none;
+    }
+    .inicio-left {
+      display:flex; flex-direction:column; justify-content:center;
+      padding:5rem 3.5rem 5rem 4.5rem; position:relative; z-index:1;
+    }
+    .inicio-tag {
+      font-size:0.67rem; letter-spacing:0.18em; text-transform:uppercase;
+      font-weight:600; color:var(--gold);
+      display:flex; align-items:center; gap:0.65rem; margin-bottom:2rem;
+    }
+    .inicio-tag::before { content:''; width:26px; height:1px; background:var(--gold); }
+    .inicio-title {
+      font-family:'Tenor Sans',sans-serif;
+      font-size:clamp(3rem,4.5vw,5rem); font-weight:700;
+      line-height:1.0; color:var(--navy); margin-bottom:2rem; letter-spacing:-0.01em;
+    }
+    .inicio-desc {
+      font-size:0.97rem; line-height:1.8; font-weight:300;
+      color:var(--muted); max-width:420px;
+    }
+    .inicio-desc p { margin-bottom:0.9rem; }
+    .inicio-desc p:last-child { margin-bottom:0; }
+    .inicio-meta {
+      margin-top:3rem; padding-top:2.5rem;
+      border-top:1px solid rgba(173,220,255,0.1);
+      font-size:0.77rem; color:var(--muted); letter-spacing:0.06em;
+    }
+    .inicio-right {
+      display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr;
+      gap:3px; position:relative; z-index:1;
+    }
+    .hero-photo { overflow:hidden; position:relative; }
+    .hero-photo img {
+      width:100%; height:100%; object-fit:cover;
+      transition:transform .7s;
+    }
+    .hero-photo:hover img { transform:scale(1.05); }
+    .hero-photo-label {
+      position:absolute; bottom:0; left:0; right:0; padding:0.55rem 0.9rem;
+      background:linear-gradient(to top,rgba(255,255,255,0.92),transparent);
+      font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase;
+      color:var(--navy); font-weight:600;
+    }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+    .inicio-left > * { animation:fadeUp .6s ease both; }
+    .inicio-left > *:nth-child(1){animation-delay:.1s}
+    .inicio-left > *:nth-child(2){animation-delay:.22s}
+    .inicio-left > *:nth-child(3){animation-delay:.34s}
+    .inicio-left > *:nth-child(4){animation-delay:.46s}
 
-  /* ── HORECA INTRO ── */
-  #horeca {
-    min-height:100vh; padding-top:64px;
-    background:var(--white);
-    display:flex; flex-direction:column; justify-content:center;
-    padding-left:4.5rem; padding-right:4.5rem; padding-bottom:5rem;
-  }
-  .horeca-header { margin-bottom:3.5rem; max-width:600px; }
+    /* ── HORECA INTRO ── */
+    #horeca {
+      min-height:100vh; padding-top:64px;
+      background:var(--white);
+      display:flex; flex-direction:column; justify-content:center;
+      padding-left:4.5rem; padding-right:4.5rem; padding-bottom:5rem;
+    }
+    .horeca-header { margin-bottom:3.5rem; max-width:600px; }
 
-  /* GROUP GRID */
-  .group-grid {
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:1px;
-    background:var(--white);
-    border:1px solid var(--border);
-    border-radius:4px;
-    overflow:hidden;
-  }
-  .group-card {
-    background:var(--white);
-    padding:1.6rem 1.4rem 1.8rem;
-    display:flex; flex-direction:column;
-    align-items:center; text-align:center;
-    cursor:default;
-  }
-  .group-card:hover { /* background:var(--sky-pale); */ }
-  .group-card-icon {
-    width:44px; height:44px; margin-bottom:1.1rem; flex-shrink:0;
-    color:var(--navy); opacity:0.55;
-    transition:opacity .22s;
-  }
-  .group-card:hover .group-card-icon { opacity:0.9; }
-  .group-card-photo {
-    width:100%; height:180px; object-fit:contain;
-    background:var(--sky-pale); border-radius:2px; margin-bottom:1.1rem;
-    transition:transform .3s;
-    display:block;
-  }
-  .group-card:hover .group-card-photo {
-    transform:scale(1.02);
-  }
-  .group-label {
-    font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase;
-    color:var(--gold); font-weight:600; margin-bottom:0.35rem;
-  }
-  .group-name {
-    font-family:'Tenor Sans',sans-serif; font-size:0.98rem; font-weight:600;
-    color:var(--navy); line-height:1.3;
-  }
-  .group-label { display:none; }
-  /* section divider label */
-  .group-section-header {
-    grid-column:1/-1;
-    padding:0.7rem 1.4rem;
-    background:var(--navy);
-    font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase;
-    color:rgba(173,220,255,0.65); font-weight:700;
-  }
+    /* GROUP GRID */
+    .group-grid {
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:1px;
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:4px;
+      overflow:hidden;
+    }
+    .group-card {
+      background:var(--white);
+      padding:1.6rem 1.4rem 1.8rem;
+      display:flex; flex-direction:column;
+      align-items:center; text-align:center;
+      cursor:default;
+    }
+    .group-card:hover { /* background:var(--sky-pale); */ }
+    .group-card-icon {
+      width:44px; height:44px; margin-bottom:1.1rem; flex-shrink:0;
+      color:var(--navy); opacity:0.55;
+      transition:opacity .22s;
+    }
+    .group-card:hover .group-card-icon { opacity:0.9; }
+    .group-card-photo {
+      width:100%; aspect-ratio:1/1; object-fit:contain;
+      background:var(--white); border-radius:2px; margin-bottom:1.1rem;
+      transition:transform .3s;
+      display:block;
+    }
+    .group-card:hover .group-card-photo {
+      transform:scale(1.02);
+    }
+    .group-label {
+      font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase;
+      color:var(--gold); font-weight:600; margin-bottom:0.35rem;
+    }
+    .group-name {
+      font-family:'Tenor Sans',sans-serif; font-size:0.98rem; font-weight:600;
+      color:var(--navy); line-height:1.3;
+    }
+    .group-label { display:none; }
+    /* section divider label */
+    .group-section-header {
+      grid-column:1/-1;
+      padding:0.7rem 1.4rem;
+      background:var(--navy);
+      font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase;
+      color:rgba(173,220,255,0.65); font-weight:700;
+    }
 
-  /* ── HORECA PRODUCTOS ── */
-  #horeca-productos {
-    background:var(--white);
-    padding:6rem 4.5rem;
-  }
-  .products-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem; }
-  .products-grid {
-    display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem;
-  }
-  .pcard {
-    background:var(--white); border-radius:3px; overflow:hidden;
-    border:1px solid var(--border); transition:transform .28s, box-shadow .28s;
-    display:flex; flex-direction:column;
-  }
-  .pcard:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(7,46,81,0.09); }
-  .pcard-img {
-    width:100%; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;
-    overflow:hidden; background:var(--sky-pale);
-  }
-  .pcard-img img { max-width:100%; max-height:100%; object-fit:contain; transition:transform .5s; }
-  .pcard:hover .pcard-img img { transform:scale(1.07); }
-  .pcard-body { padding:1.1rem 1.2rem 1.4rem; }
-  .pcard-cat {
-    font-size:0.63rem; letter-spacing:0.1em; text-transform:uppercase;
-    color:var(--gold); font-weight:600; margin-bottom:0.35rem;
-  }
-  .pcard-name {
-    font-family:'Tenor Sans',sans-serif; font-size:1rem; font-weight:600;
-    color:var(--navy); margin-bottom:0.3rem;
-  }
-  .pcard-desc { font-size:0.77rem; color:var(--muted); line-height:1.5; }
-  .catalog-row {
-    margin-top:2rem; padding:1.5rem 2rem;
-    background:rgba(7,46,81,0.06); border-radius:3px;
-    display:flex; align-items:center; justify-content:space-between; gap:2rem;
-  }
-  .catalog-row p { font-size:0.88rem; color:var(--navy); font-weight:300; }
-  .catalog-row strong { color:var(--navy); font-weight:500; }
-  .btn-sm {
-    font-size:0.8rem; font-weight:600; letter-spacing:0.05em;
-    background:var(--gold); color:var(--white); text-decoration:none;
-    padding:0.6rem 1.4rem; border-radius:2px; transition:background .2s; flex-shrink:0;
-  }
-  .btn-sm:hover { background:var(--gold-lt); }
+    /* ── HORECA PRODUCTOS ── */
+    #horeca-productos {
+      background:var(--white);
+      padding:6rem 4.5rem;
+    }
+    .products-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem; }
+    .products-grid {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem;
+    }
+    .pcard {
+      background:var(--white); border-radius:3px; overflow:hidden;
+      border:1px solid var(--border); transition:transform .28s, box-shadow .28s;
+      display:flex; flex-direction:column;
+    }
+    .pcard:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(7,46,81,0.09); }
+    .pcard-img {
+      width:100%; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;
+      overflow:hidden; background:var(--sky-pale);
+    }
+    .pcard-img img { max-width:100%; max-height:100%; object-fit:contain; transition:transform .5s; }
+    .pcard:hover .pcard-img img { transform:scale(1.07); }
+    .pcard-body { padding:1.1rem 1.2rem 1.4rem; }
+    .pcard-cat {
+      font-size:0.63rem; letter-spacing:0.1em; text-transform:uppercase;
+      color:var(--gold); font-weight:600; margin-bottom:0.35rem;
+    }
+    .pcard-name {
+      font-family:'Tenor Sans',sans-serif; font-size:1rem; font-weight:600;
+      color:var(--navy); margin-bottom:0.3rem;
+    }
+    .pcard-desc { font-size:0.77rem; color:var(--muted); line-height:1.5; }
+    .catalog-row {
+      margin-top:2rem; padding:1.5rem 2rem;
+      background:rgba(7,46,81,0.06); border-radius:3px;
+      display:flex; align-items:center; justify-content:space-between; gap:2rem;
+    }
+    .catalog-row p { font-size:0.88rem; color:var(--navy); font-weight:300; }
+    .catalog-row strong { color:var(--navy); font-weight:500; }
+    .btn-sm {
+      font-size:0.8rem; font-weight:600; letter-spacing:0.05em;
+      background:var(--gold); color:var(--white); text-decoration:none;
+      padding:0.6rem 1.4rem; border-radius:2px; transition:background .2s; flex-shrink:0;
+    }
+    .btn-sm:hover { background:var(--gold-lt); }
 
-  /* ── MATE ── */
-  #mate {
-    min-height:100vh; padding-top:64px;
-    background:var(--white);
-    display:grid; grid-template-columns:1fr 1fr;
-  }
-  .mate-visual { position:relative; overflow:hidden; min-height:500px; }
-  .mate-visual img {
-    width:100%; height:100%; object-fit:cover;
-    transition:filter .5s;
-  }
-  .mate-visual:hover img { }
-  .mate-visual-overlay {
-    position:absolute; inset:0;
-    background:linear-gradient(to right,rgba(7,46,81,0.12),transparent);
-    pointer-events:none;
-  }
-  .mate-content {
-    display:flex; flex-direction:column; justify-content:center;
-    padding:5rem 4.5rem 5rem 4rem;
-    border-left:1px solid var(--border);
-  }
-  .mate-content .page-desc { margin-bottom:2.5rem; max-width:420px; }
+    /* ── MATE ── */
+    #mate {
+      min-height:100vh; padding-top:64px;
+      background:var(--white);
+      display:grid; grid-template-columns:1fr 1fr;
+    }
+    .mate-visual { position:relative; overflow:hidden; min-height:500px; }
+    .mate-visual img {
+      width:100%; height:100%; object-fit:cover;
+      transition:filter .5s;
+    }
+    .mate-visual:hover img { }
+    .mate-visual-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to right,rgba(7,46,81,0.12),transparent);
+      pointer-events:none;
+    }
+    .mate-content {
+      display:flex; flex-direction:column; justify-content:center;
+      padding:5rem 4.5rem 5rem 4rem;
+      border-left:1px solid var(--border);
+    }
+    .mate-content .page-desc { margin-bottom:2.5rem; max-width:420px; }
 
-  /* MATE GROUP GRID — same system, 2 cols */
-  .mate-group-grid {
-    display:grid; grid-template-columns:repeat(2,1fr);
-    gap:1px; background:var(--border); border:1px solid var(--border);
-    border-radius:4px; overflow:hidden; margin-bottom:2rem;
-  }
-  .mate-group-card {
-    background:var(--white); padding:1.4rem 1.4rem 1.6rem;
-    display:flex; align-items:center; gap:1.4rem;
-    transition:background .22s;
-  }
-  .mate-group-card:hover { background:var(--sky-pale); }
-  .mate-group-icon {
-    width:36px; height:36px; flex-shrink:0; margin-top:0.1rem;
-    color:var(--navy); opacity:0.5; transition:opacity .22s;
-  }
-  .mate-group-card:hover .mate-group-icon { opacity:0.85; }
-  .mate-group-image {
-    width:100px; height:100px; flex-shrink:0; margin-top:0;
-    object-fit:cover; border-radius:12px;
-  }
-  .mate-group-name {
-    font-family:'Tenor Sans',sans-serif; font-size:1rem; font-weight:600;
-    color:var(--navy); margin-bottom:0.2rem;
-  }
-  .mate-group-sub { font-size:0.76rem; color:var(--muted); line-height:1.45; }
-  .mate-note {
-    font-size:0.82rem; color:var(--navy); line-height:1.65;
-    padding:1rem 1.2rem; border-left:3px solid var(--sky); background:var(--sky-pale);
-    border-radius:0 3px 3px 0;
-  }
+    /* MATE GROUP GRID — same system, 2 cols */
+    .mate-group-grid {
+      display:grid; grid-template-columns:repeat(2,1fr);
+      gap:1px; background:var(--border); border:1px solid var(--border);
+      border-radius:4px; overflow:hidden; margin-bottom:2rem;
+    }
+    .mate-group-card {
+      background:var(--white); padding:1.4rem 1.4rem 1.6rem;
+      display:flex; align-items:center; gap:1.4rem;
+      transition:background .22s;
+    }
+    .mate-group-card:hover { background:var(--sky-pale); }
+    .mate-group-icon {
+      width:36px; height:36px; flex-shrink:0; margin-top:0.1rem;
+      color:var(--navy); opacity:0.5; transition:opacity .22s;
+    }
+    .mate-group-card:hover .mate-group-icon { opacity:0.85; }
+    .mate-group-image {
+      width:100px; height:100px; flex-shrink:0; margin-top:0;
+      object-fit:cover; border-radius:12px;
+    }
+    .mate-group-name {
+      font-family:'Tenor Sans',sans-serif; font-size:1rem; font-weight:600;
+      color:var(--navy); margin-bottom:0.2rem;
+    }
+    .mate-group-sub { font-size:0.76rem; color:var(--muted); line-height:1.45; }
+    .mate-note {
+      font-size:0.82rem; color:var(--navy); line-height:1.65;
+      padding:1rem 1.2rem; border-left:3px solid var(--sky); background:var(--sky-pale);
+      border-radius:0 3px 3px 0;
+    }
 
-  /* ── CONTACTO ── */
-  #contacto {
-    min-height:100vh; padding-top:64px;
-    background:var(--white);
-    display:grid; grid-template-columns:1fr 1fr;
-    position:relative; overflow:hidden;
-  }
-  #contacto::before { display:none; }
-  .contacto-left {
-    display:flex; flex-direction:column; justify-content:center;
-    padding:5rem 4rem 5rem 4.5rem; position:relative; z-index:1;
-    border-right:1px solid rgba(7,46,81,0.08); background:rgba(255,255,255,0.98);
-  }
-  .contacto-left .page-desc { color:var(--muted); margin-bottom:2.5rem; max-width:400px; }
-  .contact-methods { display:flex; flex-direction:column; gap:0.9rem; }
-  .citem {
-    display:flex; align-items:center; gap:1.1rem; text-decoration:none;
-    background:rgba(255,255,255,0.9); border:1px solid rgba(7,46,81,0.08);
-    padding:1rem 1.3rem; border-radius:3px; transition:border-color .2s, background .2s;
-  }
-  .citem:hover { border-color:rgba(7,46,81,0.16); background:rgba(7,46,81,0.04); }
-  .cicon {
-    width:40px; height:40px; border-radius:50%; display:flex; align-items:center;
-    justify-content:center; font-size:0.92rem; flex-shrink:0;
-  }
-  .cicon-wa  { background:#25D366; }
-  .cicon-mail{ background:var(--gold); }
-  .cicon-tel { background:var(--mid); border:1px solid rgba(173,220,255,0.12); }
-  .clabel { font-size:0.61rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(7,46,81,0.65); margin-bottom:0.1rem; }
-  .cvalue { font-size:0.9rem; font-weight:500; color:var(--navy); }
+    /* ── CONTACTO ── */
+    #contacto {
+      min-height:100vh; padding-top:64px;
+      background:var(--white);
+      position:relative; overflow:hidden;
+    }
+    #contacto::before { display:none; }
+    .contacto-left {
+      display:flex; flex-direction:column; justify-content:center;
+      padding:5rem 4rem 5rem 4.5rem; position:relative; z-index:1;
+      background:rgba(255,255,255,0.98);
+    }
+    .contacto-left .page-desc { color:var(--muted); margin-bottom:2.5rem; max-width:400px; }
+    .contact-methods { display:flex; flex-direction:column; gap:0.9rem; }
+    .citem {
+      display:flex; align-items:center; gap:1.1rem; text-decoration:none;
+      background:rgba(255,255,255,0.9); border:1px solid rgba(7,46,81,0.08);
+      padding:1rem 1.3rem; border-radius:3px; transition:border-color .2s, background .2s;
+    }
+    .citem:hover { border-color:rgba(7,46,81,0.16); background:rgba(7,46,81,0.04); }
+    .cicon {
+      width:40px; height:40px; border-radius:50%; display:flex; align-items:center;
+      justify-content:center; font-size:0.92rem; flex-shrink:0;
+    }
+    .cicon-wa  { background:#25D366; }
+    .cicon-mail{ background:var(--gold); }
+    .cicon-tel { background:var(--mid); border:1px solid rgba(173,220,255,0.12); }
+    .clabel { font-size:0.61rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(7,46,81,0.65); margin-bottom:0.1rem; }
+    .cvalue { font-size:0.9rem; font-weight:500; color:var(--navy); }
 
-  .contacto-right {
-    display:flex; flex-direction:column; justify-content:center;
-    padding:5rem 4.5rem 5rem 4rem; position:relative; z-index:1;
-  }
-  .cform-title {
-    font-family:'Tenor Sans',sans-serif; font-size:1.5rem; font-weight:700;
-    color:var(--navy); margin-bottom:0.4rem;
-  }
-  .cform-sub { font-size:0.82rem; color:var(--muted); margin-bottom:1rem; line-height:1.7; }
-  .cform-note { font-size:0.82rem; color:var(--muted); line-height:1.7; max-width:360px; }
-  .fg { margin-bottom:1rem; }
-  .fg label {
-    display:block; font-size:0.64rem; text-transform:uppercase; letter-spacing:0.09em;
-    color:rgba(7,46,81,0.7); margin-bottom:0.38rem; font-weight:600;
-  }
-  .fg input,.fg textarea,.fg select {
-    width:100%; padding:0.7rem 0.9rem;
-    border:1px solid rgba(7,46,81,0.14); border-radius:2px;
-    font-family:'Biryani',sans-serif; font-size:0.87rem; color:var(--navy);
-    background:rgba(243,247,255,0.95); outline:none; transition:border-color .2s;
-  }
-  .fg input::placeholder,.fg textarea::placeholder { color:rgba(7,46,81,0.45); }
-  .fg select { color:var(--navy); }
-  .fg select option { background:var(--white); color:var(--navy); }
-  .fg input:focus,.fg textarea:focus,.fg select:focus { border-color:rgba(7,46,81,0.28); }
-  .fg textarea { resize:vertical; min-height:75px; }
-  .fbtn {
-    width:100%; padding:0.88rem; background:var(--gold); color:var(--white);
-    border:none; border-radius:2px; cursor:pointer;
-    font-family:'Biryani',sans-serif; font-size:0.87rem; font-weight:600;
-    letter-spacing:0.05em; transition:background .2s; margin-top:0.4rem;
-  }
-  .fbtn:hover { background:var(--gold-lt); }
 
-  .footer-strip {
-    position:absolute; bottom:0; left:0; right:0;
-    padding:1rem 4.5rem; border-top:1px solid rgba(7,46,81,0.08);
-    display:flex; justify-content:space-between; align-items:center;
-    font-size:0.71rem; color:rgba(7,46,81,0.45);
-  }
+    .footer-strip {
+      position:absolute; bottom:0; left:0; right:0;
+      padding:1rem 4.5rem; border-top:1px solid rgba(7,46,81,0.08);
+      display:flex; justify-content:space-between; align-items:center;
+      font-size:0.71rem; color:rgba(7,46,81,0.45);
+    }
 
-  /* ── RESPONSIVE ── */
-  @media(max-width:960px){
-    nav{padding:0 1.5rem;} .nav-links{display:none;}
-    #inicio,#mate,#contacto{grid-template-columns:1fr; min-height:auto;}
-    .inicio-right{height:55vw; grid-template-columns:1fr 1fr; grid-template-rows:1fr;}
-    .inicio-left,.mate-content,.contacto-left,.contacto-right{padding:3rem 1.5rem;}
-    #horeca,#horeca-productos{padding:3rem 1.5rem;}
-    .mate-visual{height:55vw; min-height:auto;}
-    .group-grid{grid-template-columns:repeat(3,1fr);}
-    .products-grid{grid-template-columns:1fr 1fr;}
-    .products-header{flex-direction:column; align-items:flex-start; gap:1.5rem;}
-    .catalog-row{flex-direction:column; text-align:center; gap:1rem;}
-    .footer-strip{padding:1rem 1.5rem; flex-direction:column; gap:0.5rem; text-align:center;}
-  }
-  @media(max-width:580px){
-    .group-grid{grid-template-columns:repeat(2,1fr);}
-    .mate-group-grid{grid-template-columns:1fr;}
-    .products-grid{grid-template-columns:1fr;}
-  }
-</style>
-</head>
-<body>
+    /* ── RESPONSIVE ── */
+    @media(max-width:960px){
+      nav{padding:0 1.5rem;} .nav-links{display:none;}
+      #inicio,#mate,#contacto{grid-template-columns:1fr; min-height:auto;}
+      .inicio-right{min-height:55vw; grid-template-columns:1fr 1fr; grid-template-rows:repeat(2,1fr);}
+      .inicio-left,.mate-content,.contacto-left{padding:3rem 1.5rem;}
+      #horeca,#horeca-productos{padding:3rem 1.5rem;}
+      .mate-visual{height:55vw; min-height:auto;}
+      .group-grid{grid-template-columns:repeat(3,1fr);}
+      .products-grid{grid-template-columns:1fr 1fr;}
+      .products-header{flex-direction:column; align-items:flex-start; gap:1.5rem;}
+      .catalog-row{flex-direction:column; text-align:center; gap:1rem;}
+      .footer-strip{padding:1rem 1.5rem; flex-direction:column; gap:0.5rem; text-align:center;}
+    }
+    @media(max-width:580px){
+      .group-grid{grid-template-columns:repeat(2,1fr);}
+      .mate-group-grid{grid-template-columns:1fr;}
+      .products-grid{grid-template-columns:1fr;}
+    }
+  </style>
+  </head>
+  <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo"><img src="/img/Corporativo/Logo.png" alt="Logo Empresa" style="height:40px; width:auto;"></div>
-  <ul class="nav-links">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#horeca">HORECA</a></li>
-    <li><a href="#mate">Mate</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-    <li><a href="#contacto" class="nav-catalog">Solicitar catálogo</a></li>
-  </ul>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><img src="/img/Corporativo/Logo.png" alt="Logo Empresa" style="height:40px; width:auto;"></div>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#horeca">HORECA</a></li>
+      <li><a href="#mate">Mate</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#contacto" class="nav-catalog">Solicitar catálogo</a></li>
+    </ul>
+  </nav>
 
-<!-- ═══════════════════════════ INICIO ═══════════════════════════ -->
-<section id="inicio">
-  <div class="inicio-left">
-    <div class="inicio-tag">Distribuidora HORECA</div>
-    <h1 class="inicio-title">Consumibles<br>para<br>hostelería</h1>
-    <div class="inicio-desc">
-      <p>Proveedor de consumibles para cafeterías, bares y restaurantes. Gama completa de productos de un solo uso para el funcionamiento diario de tu establecimiento.</p>
-      <p>Distribución mayorista directa en Barcelona, con precios competitivos y atención personalizada.</p>
+  <!-- ═══════════════════════════ INICIO ═══════════════════════════ -->
+  <section id="inicio">
+    <div class="inicio-left">
+      <div class="inicio-tag">Distribuidora HORECA</div>
+      <h1 class="inicio-title">Consumibles<br>para<br>hostelería</h1>
+      <div class="inicio-desc">
+        <p>Proveedor de consumibles para cafeterías, bares y restaurantes. Gama completa de productos de un solo uso para el funcionamiento diario de tu establecimiento.</p>
+        <p>Distribución mayorista directa en Barcelona, con precios competitivos y atención personalizada.</p>
+      </div>
+      <div class="inicio-meta">Barcelona · España</div>
     </div>
-    <div class="inicio-meta">Barcelona · España</div>
-  </div>
-  <div class="inicio-right">
-    <div class="hero-photo"><img src="/img/Productos/Vasos.png" alt="Vasos café"><div class="hero-photo-label">Vasos café</div></div>
-    <div class="hero-photo"><img src="/img/Productos/Envases.png" alt="Envases take away"><div class="hero-photo-label">Envases</div></div>
-    <div class="hero-photo"><img src="/img/Productos/Servilletas.png" alt="Servilletas"><div class="hero-photo-label">Servilletas</div></div>
-    <div class="hero-photo"><img src="/img/Productos/Accesorios.png" alt="Accesorios"><div class="hero-photo-label">Accesorios</div></div>
-  </div>
-</section>
+    <div class="inicio-right">
+      <div class="hero-photo"><img src="/img/Productos/Vasos.png" alt="Vasos café"><div class="hero-photo-label">Vasos café</div></div>
+      <div class="hero-photo"><img src="/img/Productos/Envases.png" alt="Envases take away"><div class="hero-photo-label">Envases</div></div>
+      <div class="hero-photo"><img src="/img/Productos/Servilletas.png" alt="Servilletas"><div class="hero-photo-label">Servilletas</div></div>
+      <div class="hero-photo"><img src="/img/Productos/Accesorios.png" alt="Accesorios"><div class="hero-photo-label">Accesorios</div></div>
+    </div>
+  </section>
 
-<!-- ═══════════════════════════ HORECA ═══════════════════════════ -->
-<section id="horeca">
-  <div class="horeca-header">
-    <div class="eyebrow">Canal HORECA</div>
-    <h2 class="page-title">Todo lo que necesita<br>tu establecimiento</h2>
-    <p class="page-desc" style="max-width:520px">Gama completa de desechables para hostelería. Desde vasos y packaging hasta papel higiénico — todas las categorías cubiertas en un único proveedor.</p>
-  </div>
-
-  <div class="group-grid">
-
-    <!-- BEBIDAS -->
-    <div class="group-section-header">Bebidas y servicio</div>
-
-    <!-- VASOS-->
-    <div class="group-card">
-      <img src="/img/Productos/Vaso papel.png" alt="Vasos" class="group-card-photo">
-      <div class="group-name">Vasos</div>
+  <!-- ═══════════════════════════ HORECA ═══════════════════════════ -->
+  <section id="horeca">
+    <div class="horeca-header">
+      <div class="eyebrow">Canal HORECA</div>
+      <h2 class="page-title">Todo lo que necesita<br>tu establecimiento</h2>
+      <p class="page-desc" style="max-width:520px">Gama completa de desechables para hostelería. Desde vasos y packaging hasta papel higiénico — todas las categorías cubiertas en un único proveedor.</p>
     </div>
 
-    <!--TAPAS-->
-    <div class="group-card">
-      <!-- Tapa / lid icon -->
-      <img src="/img/Productos/TapaVaso.webp" alt="Tapas" class="group-card-photo">
-      <div class="group-name">Tapas para vasos</div>
-    </div>
+    <div class="group-grid">
 
-    <div class="group-card">
-      <!-- Sleeve / funda icon -->
-      <img src="/img/Productos/FundaVaso.webp" alt="Fundas para vasos" class="group-card-photo">
-      <div class="group-name">Fundas para vasos</div>
-    </div>
+      <!-- BEBIDAS -->
+      <div class="group-section-header">Bebidas y servicio</div>
 
-    <div class="group-card">
-      <!-- Portavasos / holder icon -->
-      <img src="/img/Productos/PortaVasos.png" alt="Portavasos" class="group-card-photo">
-      <div class="group-name">Portavasos</div>
-    </div>
+      <!-- VASOS-->
+      <div class="group-card">
+        <img src="/img/Productos/Vaso papel.png" alt="Vasos" class="group-card-photo">
+        <div class="group-name">Vasos</div>
+      </div>
 
-    <div class="group-card">
-      <img src="/img/Productos/Removedor.webp" alt="Palitos removedores" class="group-card-photo">
-      <div class="group-name">Palitos removedores</div>
-    </div>
+      <!--TAPAS-->
+      <div class="group-card">
+        <!-- Tapa / lid icon -->
+        <img src="/img/Productos/TapaVaso.webp" alt="Tapas" class="group-card-photo">
+        <div class="group-name">Tapas para vasos</div>
+      </div>
 
-    <!-- SERVICIO DE MESA -->
-    <div class="group-section-header">Servicio de mesa</div>
+      <div class="group-card">
+        <!-- Sleeve / funda icon -->
+        <img src="/img/Productos/FundaVaso.webp" alt="Fundas para vasos" class="group-card-photo">
+        <div class="group-name">Fundas para vasos</div>
+      </div>
 
-    <div class="group-card">
-      <!-- Pajita icon -->
-            <img src="/img/Productos/Pajitas.png" alt="Palitos removedores" class="group-card-photo">
-      <div class="group-label">Mesa</div>
-      <div class="group-name">Pajitas</div>
-    </div>
+      <div class="group-card">
+        <!-- Portavasos / holder icon -->
+        <img src="/img/Productos/PortaVasos.png" alt="Portavasos" class="group-card-photo">
+        <div class="group-name">Portavasos</div>
+      </div>
 
-    <div class="group-card">
-      <!-- Cucharilla icon -->
-      <img src="/img/Productos/Cucharilla.jpg" alt="Cucharillas" class="group-card-photo">
-      <div class="group-label">Mesa</div>
-      <div class="group-name">Cucharillas</div>
-    </div>
+      <div class="group-card">
+        <img src="/img/Productos/Removedor.webp" alt="Palitos removedores" class="group-card-photo">
+        <div class="group-name">Palitos removedores</div>
+      </div>
 
-    <div class="group-card">
-      <img src="/img/Productos/Servilleta.png" alt="Servilletas" class="group-card-photo">
-      <div class="group-label">Mesa</div>
-      <div class="group-name">Servilletas</div>
-    </div>
+      <!-- SERVICIO DE MESA -->
+      <div class="group-section-header">Servicio de mesa</div>
 
-    <div class="group-card">
-      <!-- Mantelín icon -->
-      <img src="/img/Productos/Mantelines.webp" alt="Mantelines" class="group-card-photo">
-      <div class="group-label">Mesa</div>
-      <div class="group-name">Mantelines</div>
-    </div>
+      <div class="group-card">
+        <!-- Pajita icon -->
+              <img src="/img/Productos/Pajitas.png" alt="Palitos removedores" class="group-card-photo">
+        <div class="group-label">Mesa</div>
+        <div class="group-name">Pajitas</div>
+      </div>
 
-    <div class="group-card">
-      <!-- Papel antigrasa icon -->
-      <img src="/img/Productos/PapelAntigrasa.webp" alt="Papel antigrasa" class="group-card-photo">
-      <div class="group-label">Mesa</div>
-      <div class="group-name">Papel antigrasa</div>
-    </div>
+      <div class="group-card">
+        <!-- Cucharilla icon -->
+        <img src="/img/Productos/Cucharilla.jpg" alt="Cucharillas" class="group-card-photo">
+        <div class="group-label">Mesa</div>
+        <div class="group-name">Cucharillas</div>
+      </div>
 
-    <!-- PACKAGING -->
-    <div class="group-section-header">Packaging y take away</div>
+      <div class="group-card">
+        <img src="/img/Productos/Servilleta.png" alt="Servilletas" class="group-card-photo">
+        <div class="group-label">Mesa</div>
+        <div class="group-name">Servilletas</div>
+      </div>
 
-    <div class="group-card">
+      <div class="group-card">
+        <!-- Mantelín icon -->
+        <img src="/img/Productos/Mantelines.webp" alt="Mantelines" class="group-card-photo">
+        <div class="group-label">Mesa</div>
+        <div class="group-name">Mantelines</div>
+      </div>
+
+      <div class="group-card">
+        <!-- Papel antigrasa icon -->
+        <img src="/img/Productos/PapelAntigrasa.webp" alt="Papel antigrasa" class="group-card-photo">
+        <div class="group-label">Mesa</div>
+        <div class="group-name">Papel antigrasa</div>
+      </div>
+
+      <!-- PACKAGING -->
+      <div class="group-section-header">Packaging y take away</div>
+
+      <div class="group-card">
+        
+        <img src="/img/Productos/BolsaSandwich.png" alt="Bolsa sándwiches" class="group-card-photo">
+        <div class="group-label">Packaging</div>
+        <div class="group-name">Bolsa sándwiches</div>
+      </div>
+
+      <div class="group-card">
+        <!-- Bolsa panadería -->
+        <img src="/img/Productos/BolsaBaguette.webp" alt="Bolsa panadería" class="group-card-photo">
+        <div class="group-label">Packaging</div>
+        <div class="group-name">Bolsa panadería</div>
+      </div>
+
+      <div class="group-card">
+        <!-- Bolsa hamburguesa -->
+        <img src="/img/Productos/BolsaHamburguesa.webp" alt="Bolsa hamburguesa" class="group-card-photo">
+        <div class="group-label">Packaging</div>
+        <div class="group-name">Bolsa hamburguesa</div>
+      </div>
+
+      <div class="group-card">
+        <!-- Bolsa croissant -->
+        <img src="/img/Productos/BolsaCroissant.webp" alt="Bolsa croissant" class="group-card-photo">
+        <div class="group-label">Packaging</div>
+        <div class="group-name">Bolsa croissant</div>
+      </div>
+
+      <div class="group-card">
+        <!-- Bolsa transporte -->
+        <img src="/img/Productos/BolsaTransporte.png" alt="Bolsa transporte" class="group-card-photo">
+        <div class="group-label">Packaging</div>
+        <div class="group-name">Bolsas con Asas</div>
+      </div>
+
+      <!-- ENVASES -->
+      <div class="group-section-header">Envases</div>
+
+      <div class="group-card">
+        <img src="/img/Productos/Ensaladera.webp" alt="Ensaladeras" class="group-card-photo">
+        <div class="group-label">Envases</div>
+        <div class="group-name">Ensaladeras</div>
+      </div>
+
+      <div class="group-card">
+        <!-- Tarrina sopa icon -->
+        <img src="/img/Productos/TarrinaSopa.webp" alt="Tarrinas para sopa" class="group-card-photo">
+        <div class="group-label">Envases</div>
+        <div class="group-name">Tarrina sopa c/tapa</div>
+      </div>
+
+      <div class="group-card">
+        <!-- Contenedor icon -->
+        <img src="/img/Productos/ContenedorRectangular.webp" alt="Contenedores" class="group-card-photo">
+        <div class="group-label">Envases</div>
+        <div class="group-name">Contenedores Rectangulares</div>
+      </div>
+
+      <div class="group-card">
+        <!-- Concha / shell container -->
+        <img src="/img/Productos/Concha.png" alt="Conchas" class="group-card-photo">
+        <div class="group-label">Envases</div>
+        <div class="group-name">Conchas</div>
+      </div>
       
-      <img src="/img/Productos/BolsaSandwich.png" alt="Bolsa sándwiches" class="group-card-photo">
-      <div class="group-label">Packaging</div>
-      <div class="group-name">Bolsa sándwiches</div>
-    </div>
 
-    <div class="group-card">
-      <!-- Bolsa panadería -->
-      <img src="/img/Productos/BolsaBaguette.webp" alt="Bolsa panadería" class="group-card-photo">
-      <div class="group-label">Packaging</div>
-      <div class="group-name">Bolsa panadería</div>
-    </div>
+      <div class="group-card">
+        <!-- Caja comida -->
+        <img src="/img/Productos/CajaComida.webp" alt="Caja comida" class="group-card-photo">
+        <div class="group-label">Envases</div>
+        <div class="group-name">Caja para comida</div>
+      </div>
 
-    <div class="group-card">
-      <!-- Bolsa hamburguesa -->
-      <img src="/img/Productos/BolsaHamburguesa.webp" alt="Bolsa hamburguesa" class="group-card-photo">
-      <div class="group-label">Packaging</div>
-      <div class="group-name">Bolsa hamburguesa</div>
-    </div>
+      <!-- HIGIENE Y OTROS -->
+      <div class="group-section-header">Higiene y otros</div>
 
-    <div class="group-card">
-      <!-- Bolsa croissant -->
-      <img src="/img/Productos/BolsaCroissant.webp" alt="Bolsa croissant" class="group-card-photo">
-      <div class="group-label">Packaging</div>
-      <div class="group-name">Bolsa croissant</div>
-    </div>
+      <div class="group-card">
+        <!-- Papel térmico / ticket -->
+        <img src="/img/Productos/PapelTermico.jpg" alt="Papel térmico" class="group-card-photo">
+        <div class="group-label">Otros</div>
+        <div class="group-name">Papel térmico</div>
+      </div>
 
-    <div class="group-card">
-      <!-- Bolsa transporte -->
-      <img src="/img/Productos/BolsaTransporte.png" alt="Bolsa transporte" class="group-card-photo">
-      <div class="group-label">Packaging</div>
-      <div class="group-name">Bolsas con Asas</div>
-    </div>
+      <div class="group-card">
+        <!-- Bolígrafo -->
+        <img src="/img/Productos/Boligrafo.jpg" alt="Bolígrafo" class="group-card-photo">
+        <div class="group-label">Otros</div>
+        <div class="group-name">Bolígrafos</div>
+      </div>
 
-    <!-- ENVASES -->
-    <div class="group-section-header">Envases</div>
+      <div class="group-card">
+        <!-- Papel secamanos -->
+        <img src="/img/Productos/PapelSecamanos.webp" alt="Papel secamanos" class="group-card-photo">
+        <div class="group-label">Higiene</div>
+        <div class="group-name">Papel secamanos</div>
+      </div>
 
-    <div class="group-card">
-      <img src="/img/Productos/Ensaladera.webp" alt="Ensaladeras" class="group-card-photo">
-      <div class="group-label">Envases</div>
-      <div class="group-name">Ensaladeras</div>
-    </div>
+      <div class="group-card">
+        <!-- Papel toalla / rollo -->
+        <img src="/img/Productos/PapelToalla.webp" alt="Papel toalla" class="group-card-photo">
+        <div class="group-label">Higiene</div>
+        <div class="group-name">Papel toalla</div>
+      </div>
 
-    <div class="group-card">
-      <!-- Tarrina sopa icon -->
-      <img src="/img/Productos/TarrinaSopa.webp" alt="Tarrinas para sopa" class="group-card-photo">
-      <div class="group-label">Envases</div>
-      <div class="group-name">Tarrina sopa c/tapa</div>
-    </div>
+      <div class="group-card">
+        <!-- Papel higiénico -->
+        <img src="/img/Productos/PapelHigienico.webp" alt="Papel higiénico" class="group-card-photo">
+        <div class="group-label">Higiene</div>
+        <div class="group-name">Papel higiénico</div>
+      </div>
 
-    <div class="group-card">
-      <!-- Contenedor icon -->
-      <img src="/img/Productos/ContenedorRectangular.webp" alt="Contenedores" class="group-card-photo">
-      <div class="group-label">Envases</div>
-      <div class="group-name">Contenedores Rectangulares</div>
-    </div>
+      <div class="group-card">
+        <!-- Papel matatrapos -->
+        <img src="/img/Productos/PapelMatatrapos.webp" alt="Papel matatrapos" class="group-card-photo">
+        <div class="group-label">Higiene</div>
+        <div class="group-name">Papel matatrapos</div>
+      </div>
 
-    <div class="group-card">
-      <!-- Concha / shell container -->
-      <img src="/img/Productos/Concha.png" alt="Conchas" class="group-card-photo">
-      <div class="group-label">Envases</div>
-      <div class="group-name">Conchas</div>
-    </div>
-    
+    </div><!-- /group-grid -->
+  </section>
 
-    <div class="group-card">
-      <!-- Caja comida -->
-      <img src="/img/Productos/CajaComida.webp" alt="Caja comida" class="group-card-photo">
-      <div class="group-label">Envases</div>
-      <div class="group-name">Caja para comida</div>
-    </div>
-
-    <!-- HIGIENE Y OTROS -->
-    <div class="group-section-header">Higiene y otros</div>
-
-    <div class="group-card">
-      <!-- Papel térmico / ticket -->
-      <img src="/img/Productos/PapelTermico.jpg" alt="Papel térmico" class="group-card-photo">
-      <div class="group-label">Otros</div>
-      <div class="group-name">Papel térmico</div>
-    </div>
-
-    <div class="group-card">
-      <!-- Bolígrafo -->
-      <img src="/img/Productos/Boligrafo.jpg" alt="Bolígrafo" class="group-card-photo">
-      <div class="group-label">Otros</div>
-      <div class="group-name">Bolígrafos</div>
-    </div>
-
-    <div class="group-card">
-      <!-- Papel secamanos -->
-      <img src="/img/Productos/PapelSecamanos.webp" alt="Papel secamanos" class="group-card-photo">
-      <div class="group-label">Higiene</div>
-      <div class="group-name">Papel secamanos</div>
-    </div>
-
-    <div class="group-card">
-      <!-- Papel toalla / rollo -->
-      <img src="/img/Productos/PapelToalla.webp" alt="Papel toalla" class="group-card-photo">
-      <div class="group-label">Higiene</div>
-      <div class="group-name">Papel toalla</div>
-    </div>
-
-    <div class="group-card">
-      <!-- Papel higiénico -->
-      <img src="/img/Productos/PapelHigienico.webp" alt="Papel higiénico" class="group-card-photo">
-      <div class="group-label">Higiene</div>
-      <div class="group-name">Papel higiénico</div>
-    </div>
-
-    <div class="group-card">
-      <!-- Papel matatrapos -->
-      <img src="/img/Productos/PapelMatatrapos.webp" alt="Papel matatrapos" class="group-card-photo">
-      <div class="group-label">Higiene</div>
-      <div class="group-name">Papel matatrapos</div>
-    </div>
-
-  </div><!-- /group-grid -->
-</section>
-
-<!-- ═══════════════════════════ HORECA PRODUCTOS ═══════════════════════════ -->
-<section id="horeca-productos">
-  <div class="products-header">
-    <div>
-      <div class="eyebrow">Nuestros productos</div>
-      <h2 class="page-title" style="font-size:clamp(1.6rem,2.2vw,2.4rem); margin-bottom:0.4rem">Productos destacados</h2>
-      <p style="font-size:0.85rem; color:var(--muted); font-weight:300">Selección representativa de productos a destacar. Catálogo completo disponible bajo solicitud.</p>
-    </div>
-  </div>
-  <div class="products-grid">
-    <div class="pcard">
-      <div class="pcard-img"><img src="img/Productos/VasoCafe240ml.png" alt="Vaso de café 240ml"></div>
-      <div class="pcard-body">
-        <p class="pcard-cat">Bebidas</p>
-        <h3 class="pcard-name">Vaso de cartón de 240ml (8oz)</h3>
-        <p class="pcard-desc">Para café y bebidas calientes. Disponible en otros tamaños y formatos.</p>
+  <!-- ═══════════════════════════ HORECA PRODUCTOS ═══════════════════════════ -->
+  <section id="horeca-productos">
+    <div class="products-header">
+      <div>
+        <div class="eyebrow">Nuestros productos</div>
+        <h2 class="page-title" style="font-size:clamp(1.6rem,2.2vw,2.4rem); margin-bottom:0.4rem">Productos destacados</h2>
+        <p style="font-size:0.85rem; color:var(--muted); font-weight:300">Selección representativa de productos a destacar. Catálogo completo disponible bajo solicitud.</p>
       </div>
     </div>
-    <div class="pcard">
-      <div class="pcard-img"><img src="img/Productos/Servilleta10x10.webp" alt="Servilleta 10x10"></div>
-      <div class="pcard-body">
-        <p class="pcard-cat">Servilletas</p>
-        <h3 class="pcard-name">Servilletas de papel 10x10</h3>
-        <p class="pcard-desc">Ideal para el servicio de bebidas, en barra, en mesa y take away.</p>
-      </div>
-    </div>
-    <div class="pcard">
-      <div class="pcard-img"><img src="img/Productos/BolsaTakeAway.webp" alt="Bolsas para take away"></div>
-      <div class="pcard-body">
-        <p class="pcard-cat">Bolsas para take away</p>
-        <h3 class="pcard-name">Bolsas con asas</h3>
-        <p class="pcard-desc">Bolsas de papel para delivery y take away, resistentes y disponibles en varios tamaños.</p>
-      </div>
-    </div>
-    <div class="pcard">
-      <div class="pcard-img"><img src="img/Productos/AccesoriosCafe.webp" alt="Accesorios café"></div>
-      <div class="pcard-body">
-        <p class="pcard-cat">Accesorios</p> 
-        <h3 class="pcard-name">Removedores de madera</h3>
-        <p class="pcard-desc">Removedores enfundados para café.</p>
-      </div>
-    </div>
-  </div>
-  <div class="catalog-row">
-    <p><strong>Más de 200 referencias disponibles.</strong> Solicita la lista de precios completa.</p>
-    <a href="#contacto" class="btn-sm">Solicitar catálogo →</a>
-  </div>
-</section>
-
-<!-- ═══════════════════════════ MATE ═══════════════════════════ -->
-<section id="mate">
-  <div class="mate-visual">
-    <img src="MKMBPN01.jpg" alt="Productos mate">
-    <div class="mate-visual-overlay"></div>
-  </div>
-  <div class="mate-content">
-    <div class="eyebrow">División Mate</div>
-    <h2 class="page-title">Nuestros productos<br>para tomar mate</h2>
-    <p class="page-desc">Para establecimientos que quieran incorporar el mate a su oferta, minimarkets o tiendas especializadas. Disponemos de productos para el mate.</p>
-
-    <div class="mate-group-grid">
-
-      <div class="mate-group-card">
-        <img src="img/Productos/Mates.jpg" alt="Mates" class="mate-group-image">
-        <div>
-          <div class="mate-group-name">Mates</div>
-          <div class="mate-group-sub">Varios colores y formatos</div>
+    <div class="products-grid">
+      <div class="pcard">
+        <div class="pcard-img"><img src="img/Productos/VasoCafe240ml.png" alt="Vaso de café 240ml"></div>
+        <div class="pcard-body">
+          <p class="pcard-cat">Bebidas</p>
+          <h3 class="pcard-name">Vaso de cartón de 240ml (8oz)</h3>
+          <p class="pcard-desc">Para café y bebidas calientes. Disponible en otros tamaños y formatos.</p>
         </div>
       </div>
-
-      <div class="mate-group-card">
-        <img src="img/Productos/Bombillas.jpg" alt="Bombillas" class="mate-group-image">
-        <div>
-          <div class="mate-group-name">Bombillas</div>
-          <div class="mate-group-sub">Acero inoxidable, variedad de tamaños y formas</div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="img/Productos/Servilleta10x10.webp" alt="Servilleta 10x10"></div>
+        <div class="pcard-body">
+          <p class="pcard-cat">Servilletas</p>
+          <h3 class="pcard-name">Servilletas de papel 10x10</h3>
+          <p class="pcard-desc">Ideal para el servicio de bebidas, en barra, en mesa y take away.</p>
         </div>
       </div>
-
-      <div class="mate-group-card">
-        <img src="img/Productos/Termos.png" alt="Termos" class="mate-group-image">
-        <div>
-          <div class="mate-group-name">Termos</div>
-          <div class="mate-group-sub">Para mate y tereré</div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="img/Productos/BolsaTakeAway.webp" alt="Bolsas para take away"></div>
+        <div class="pcard-body">
+          <p class="pcard-cat">Bolsas para take away</p>
+          <h3 class="pcard-name">Bolsas con asas</h3>
+          <p class="pcard-desc">Bolsas de papel para delivery y take away, resistentes y disponibles en varios tamaños.</p>
         </div>
       </div>
-
-      <div class="mate-group-card">
-        <img src="img/Productos/Tapones.jpg" alt="Tapones" class="mate-group-image">
-        <div>
-          <div class="mate-group-name">Tapones</div>
-          <div class="mate-group-sub">Repuestos y pico cebador</div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="img/Productos/AccesoriosCafe.webp" alt="Accesorios café"></div>
+        <div class="pcard-body">
+          <p class="pcard-cat">Accesorios</p> 
+          <h3 class="pcard-name">Removedores de madera</h3>
+          <p class="pcard-desc">Removedores enfundados para café.</p>
         </div>
       </div>
-
-      <div class="mate-group-card">
-        <img src="img/Productos/Yerberos.jpg" alt="Yerberos" class="mate-group-image">
-        <div>
-          <div class="mate-group-name">Yerberos</div>
-          <div class="mate-group-sub">Contenedores para yerba</div>
-        </div>
-      </div>
-
-      <div class="mate-group-card">
-        <img src="img/Productos/Kits.jpg" alt="Kit" class="mate-group-image">
-        <div>
-          <div class="mate-group-name">Kit</div>
-          <div class="mate-group-sub">Sets completos de mate y bombilla</div>
-        </div>
-      </div>
-
-      <!-- 
-      <div class="mate-group-card">
-        <svg class="mate-group-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 10 Q6 6 10 6 H26 Q30 6 30 10 L28 30 H8 Z"/>
-          <line x1="6" y1="14" x2="30" y2="14"/>
-          <path d="M12 6 Q12 10 18 10 Q24 10 24 6"/>
-        </svg>
-        <div>
-          <div class="mate-group-name">Bolso</div>
-          <div class="mate-group-sub">Transporte y almacenaje</div>
-        </div>
-      </div>
-      -->
-
-    </div><!-- /mate-group-grid -->
-
-    <div class="mate-note">
-      Catálogo completo y precios disponibles para compra al por mayor. Solicítalo desde la sección de contacto.
     </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════ CONTACTO ═══════════════════════════ -->
-<section id="contacto">
-  <div class="contacto-left">
-    <div class="eyebrow">Contacto y catálogo</div>
-    <h2 class="page-title">Contacto y catálogo</h2>
-    <p class="page-desc">Para solicitar la lista de precios, consultar disponibilidad o cualquier otra gestión. Escríbenos por WhatsApp, email o teléfono y te atendemos con catálogo, precios y atención personalizada.</p>
-    <div class="contact-methods">
-      <a href="https://wa.me/34613061960" target="_blank" class="citem">
-        <div class="cicon cicon-wa">💬</div>
-        <div><div class="clabel">WhatsApp</div><div class="cvalue">+34 613 06 19 60</div></div>
-      </a>
-      <a href="mailto:gfernandez.dist@gmail.com" class="citem">
-        <div class="cicon cicon-mail">✉️</div>
-        <div><div class="clabel">Email</div><div class="cvalue">gfernandez.dist@gmail.com</div></div>
-      </a>
-      <a href="tel:+34613061960" class="citem">
-        <div class="cicon cicon-tel">📞</div>
-        <div><div class="clabel">Teléfono</div><div class="cvalue">+34 613 06 19 60</div></div>
-      </a>
+    <div class="catalog-row">
+      <p><strong>Más de 200 referencias disponibles.</strong> Solicita la lista de precios completa.</p>
+      <a href="#contacto" class="btn-sm">Solicitar catálogo →</a>
     </div>
-  </div>
-  <div class="contacto-right">
-    <div class="cform-title">Escríbenos directamente</div>
-    <div class="cform-sub">Usa cualquiera de los medios de la izquierda para solicitar catálogo, precios o servicio.</div>
-    <div class="cform-note">Si necesitas respuesta rápida, WhatsApp suele ser la forma más ágil. También puedes enviar un correo con tu consulta y te responderemos lo antes posible.</div>
-  </div>
-  <div class="footer-strip">
-    <span>© 2025 Nombre_Empresa · Barcelona</span>
-    <span>Distribución de consumibles para hostelería</span>
-  </div>
-</section>
+  </section>
 
-<!-- NAV ACTIVE STATE -->
-<script>
-  const sections = document.querySelectorAll('section[id]');
-  const links = document.querySelectorAll('.nav-links a:not(.nav-catalog)');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        links.forEach(l => l.classList.remove('active'));
-        let id = e.target.id;
-        if (id === 'horeca-productos') id = 'horeca';
-        const active = document.querySelector(`.nav-links a[href="#${id}"]`);
-        if (active) active.classList.add('active');
-      }
-    });
-  }, { threshold: 0.3 });
-  sections.forEach(s => observer.observe(s));
+  <!-- ═══════════════════════════ MATE ═══════════════════════════ -->
+  <section id="mate">
+    <div class="mate-visual">
+      <img src="MKMBPN01.jpg" alt="Productos mate">
+      <div class="mate-visual-overlay"></div>
+    </div>
+    <div class="mate-content">
+      <div class="eyebrow">División Mate</div>
+      <h2 class="page-title">Nuestros productos<br>para tomar mate</h2>
+      <p class="page-desc">Para establecimientos que quieran incorporar el mate a su oferta, minimarkets o tiendas especializadas. Disponemos de productos para el mate.</p>
 
-</script>
+      <div class="mate-group-grid">
 
-</body>
-</html>
+        <div class="mate-group-card">
+          <img src="img/Productos/Mates.jpg" alt="Mates" class="mate-group-image">
+          <div>
+            <div class="mate-group-name">Mates</div>
+            <div class="mate-group-sub">Varios colores y formatos</div>
+          </div>
+        </div>
+
+        <div class="mate-group-card">
+          <img src="img/Productos/Bombillas.jpg" alt="Bombillas" class="mate-group-image">
+          <div>
+            <div class="mate-group-name">Bombillas</div>
+            <div class="mate-group-sub">Acero inoxidable, variedad de tamaños y formas</div>
+          </div>
+        </div>
+
+        <div class="mate-group-card">
+          <img src="img/Productos/Termos.png" alt="Termos" class="mate-group-image">
+          <div>
+            <div class="mate-group-name">Termos</div>
+            <div class="mate-group-sub">Para mate y tereré</div>
+          </div>
+        </div>
+
+        <div class="mate-group-card">
+          <img src="img/Productos/Tapones.jpg" alt="Tapones" class="mate-group-image">
+          <div>
+            <div class="mate-group-name">Tapones</div>
+            <div class="mate-group-sub">Repuestos y pico cebador</div>
+          </div>
+        </div>
+
+        <div class="mate-group-card">
+          <img src="img/Productos/Yerberos.jpg" alt="Yerberos" class="mate-group-image">
+          <div>
+            <div class="mate-group-name">Yerberos</div>
+            <div class="mate-group-sub">Contenedores para yerba</div>
+          </div>
+        </div>
+
+        <div class="mate-group-card">
+          <img src="img/Productos/Kits.jpg" alt="Kit" class="mate-group-image">
+          <div>
+            <div class="mate-group-name">Kit</div>
+            <div class="mate-group-sub">Sets completos de mate y bombilla</div>
+          </div>
+        </div>
+
+        <!-- 
+        <div class="mate-group-card">
+          <svg class="mate-group-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 10 Q6 6 10 6 H26 Q30 6 30 10 L28 30 H8 Z"/>
+            <line x1="6" y1="14" x2="30" y2="14"/>
+            <path d="M12 6 Q12 10 18 10 Q24 10 24 6"/>
+          </svg>
+          <div>
+            <div class="mate-group-name">Bolso</div>
+            <div class="mate-group-sub">Transporte y almacenaje</div>
+          </div>
+        </div>
+        -->
+
+      </div><!-- /mate-group-grid -->
+
+      <div class="mate-note">
+        Catálogo completo y precios disponibles para compra al por mayor. Solicítalo desde la sección de contacto.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CONTACTO ═══════════════════════════ -->
+  <section id="contacto">
+    <div class="contacto-left">
+      <div class="eyebrow">Contacto y catálogo</div>
+      <h2 class="page-title">Contacto y catálogo</h2>
+      <p class="page-desc">Para solicitar la lista de precios, consultar disponibilidad o cualquier otra gestión. Escríbenos por WhatsApp, email o teléfono y te atendemos con catálogo, precios y atención personalizada.</p>
+      <div class="contact-methods">
+        <a href="https://wa.me/34613061960" target="_blank" class="citem">
+          <div class="cicon cicon-wa">💬</div>
+          <div><div class="clabel">WhatsApp</div><div class="cvalue">+34 613 06 19 60</div></div>
+        </a>
+        <a href="mailto:gfernandez.dist@gmail.com" class="citem">
+          <div class="cicon cicon-mail">✉️</div>
+          <div><div class="clabel">Email</div><div class="cvalue">gfernandez.dist@gmail.com</div></div>
+        </a>
+        <a href="tel:+34613061960" class="citem">
+          <div class="cicon cicon-tel">📞</div>
+          <div><div class="clabel">Teléfono</div><div class="cvalue">+34 613 06 19 60</div></div>
+        </a>
+      </div>
+    </div>
+    <div class="footer-strip">
+      <span>© 2025 Nombre_Empresa · Barcelona</span>
+      <span>Distribución de consumibles para hostelería</span>
+    </div>
+  </section>
+
+  <!-- NAV ACTIVE STATE -->
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.nav-links a:not(.nav-catalog)');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          let id = e.target.id;
+          if (id === 'horeca-productos') id = 'horeca';
+          const active = document.querySelector(`.nav-links a[href="#${id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(s => observer.observe(s));
+
+  </script>
+
+  </body>
+  </html>
+
 
    
