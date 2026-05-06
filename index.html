@@ -328,7 +328,8 @@
     font-family:'Tenor Sans',sans-serif; font-size:1.5rem; font-weight:700;
     color:var(--navy); margin-bottom:0.4rem;
   }
-  .cform-sub { font-size:0.82rem; color:var(--muted); margin-bottom:1.8rem; line-height:1.5; }
+  .cform-sub { font-size:0.82rem; color:var(--muted); margin-bottom:1rem; line-height:1.7; }
+  .cform-note { font-size:0.82rem; color:var(--muted); line-height:1.7; max-width:360px; }
   .fg { margin-bottom:1rem; }
   .fg label {
     display:block; font-size:0.64rem; text-transform:uppercase; letter-spacing:0.09em;
@@ -753,9 +754,9 @@
 <!-- ═══════════════════════════ CONTACTO ═══════════════════════════ -->
 <section id="contacto">
   <div class="contacto-left">
-    <div class="eyebrow">Contacto</div>
-    <h2 class="page-title">Contacto</h2>
-    <p class="page-desc">Para solicitar la lista de precios, consultar disponibilidad o cualquier otra gestión. Puedes contactarnos por el canal que prefieras.</p>
+    <div class="eyebrow">Contacto y catálogo</div>
+    <h2 class="page-title">Contacto y catálogo</h2>
+    <p class="page-desc">Para solicitar la lista de precios, consultar disponibilidad o cualquier otra gestión. Escríbenos por WhatsApp, email o teléfono y te atendemos con catálogo, precios y atención personalizada.</p>
     <div class="contact-methods">
       <a href="https://wa.me/34613061960" target="_blank" class="citem">
         <div class="cicon cicon-wa">💬</div>
@@ -772,24 +773,9 @@
     </div>
   </div>
   <div class="contacto-right">
-    <div class="cform-title">Solicitar catálogo</div>
-    <div class="cform-sub">Completa el formulario y te enviamos la lista de precios completa.</div>
-  <form id="catalog-form">
-    <div class="fg"><label>Establecimiento</label><input type="text" name="establecimiento" placeholder="Nombre del local"></div>
-    <div class="fg"><label>Nombre</label><input type="text" name="nombre" placeholder="Nombre y apellido"></div>
-    <div class="fg"><label>Email o WhatsApp</label><input type="text" name="contacto" placeholder="Para enviarte el catálogo"></div>
-    <div class="fg"><label>Ciudad</label><input type="text" name="ciudad" placeholder="Ciudad"></div>
-    <div class="fg">
-      <label>División de interés</label>
-      <select name="division">
-        <option>HORECA — consumibles hostelería</option>
-        <option>Mate</option>
-        <option>Ambas</option>
-      </select>
-    </div>
-    <div class="fg"><label>Observaciones (opcional)</label><textarea name="observaciones"></textarea></div>
-    <button type="submit" class="fbtn">Enviar →</button>
-  </form>
+    <div class="cform-title">Escríbenos directamente</div>
+    <div class="cform-sub">Usa cualquiera de los medios de la izquierda para solicitar catálogo, precios o servicio.</div>
+    <div class="cform-note">Si necesitas respuesta rápida, WhatsApp suele ser la forma más ágil. También puedes enviar un correo con tu consulta y te responderemos lo antes posible.</div>
   </div>
   <div class="footer-strip">
     <span>© 2025 Nombre_Empresa · Barcelona</span>
@@ -814,21 +800,9 @@
   }, { threshold: 0.3 });
   sections.forEach(s => observer.observe(s));
 
-  const catalogForm = document.getElementById('catalog-form');
-  if (catalogForm) {
-    catalogForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const formData = new FormData(catalogForm);
-      const subject = 'Solicitud de catálogo';
-      const body = `Establecimiento: ${formData.get('establecimiento') || ''}\nNombre: ${formData.get('nombre') || ''}\nContacto: ${formData.get('contacto') || ''}\nCiudad: ${formData.get('ciudad') || ''}\nDivisión de interés: ${formData.get('division') || ''}\nObservaciones: ${formData.get('observaciones') || ''}`;
-      const mailto = `mailto:gfernandez.dist@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-    });
-  }
 </script>
 
 </body>
 </html>
 
-
-
+   
