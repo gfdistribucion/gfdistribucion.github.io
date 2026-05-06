@@ -291,7 +291,7 @@
     #contacto {
       min-height:100vh; padding-top:64px;
       background:var(--white);
-      display:grid; grid-template-columns:1.2fr minmax(340px, 420px);
+      display:grid; grid-template-columns:1fr 1fr;
       gap:2rem;
       position:relative; overflow:hidden;
     }
@@ -303,15 +303,15 @@
     }
     .contacto-left .page-desc { color:var(--muted); margin-bottom:2.5rem; max-width:460px; }
     .contacto-right {
-      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      display:flex; flex-direction:column; justify-content:center; align-items:flex-start;
       padding:5rem 2rem; position:relative; z-index:1;
       background:rgba(255,255,255,0.98);
     }
     .contact-methods {
       display:flex; flex-direction:column; gap:0.9rem;
-      width:min(420px,100%);
+      width:100%; max-width:420px;
       align-items:stretch;
-      margin:0 auto;
+      margin:0;
     }
     .citem {
       display:flex; align-items:center; gap:1.1rem; text-decoration:none;
@@ -599,9 +599,9 @@
   <section id="horeca-productos">
     <div class="products-header">
       <div>
-        <div class="eyebrow">Nuestros productos</div>
+        <div class="eyebrow">Destacados</div>
         <h2 class="page-title" style="font-size:clamp(1.6rem,2.2vw,2.4rem); margin-bottom:0.4rem">Productos destacados</h2>
-        <p style="font-size:0.85rem; color:var(--muted); font-weight:300">Selección representativa de productos a destacar. Catálogo completo disponible bajo solicitud.</p>
+        <p style="font-size:0.85rem; color:var(--muted); font-weight:300">Selección representativa de productos. Catálogo completo disponible bajo solicitud.</p>
       </div>
     </div>
     <div class="products-grid">
@@ -730,9 +730,9 @@
   <!-- ═══════════════════════════ CONTACTO ═══════════════════════════ -->
   <section id="contacto">
     <div class="contacto-left">
-      <div class="eyebrow">Contacto y catálogo</div>
-      <h2 class="page-title">Contacto y catálogo</h2>
-      <p class="page-desc">Para solicitar la lista de precios, consultar disponibilidad o cualquier otra gestión. Escríbenos por WhatsApp, email o teléfono y te atendemos con catálogo, precios y atención personalizada.</p>
+      <div class="eyebrow">Contacto</div>
+      <h2 class="page-title">Contacto</h2>
+      <p class="page-desc">Para solicitar la lista de precios, consultar disponibilidad o cualquier otra gestión. Escríbenos por WhatsApp o email, o llama al teléfono y te atendemos brindando toda la información que necesites.</p>
     </div>
     <div class="contacto-right">
       <div class="contact-methods">
@@ -778,5 +778,3 @@
   </body>
   </html>
 
-
-   
