@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="es">
   <head>
   <meta charset="UTF-8">
@@ -48,6 +48,44 @@
       transition:background .2s !important;
     }
     .nav-catalog:hover { background:var(--gold-lt) !important; }
+    
+    /* ── HAMBURGER MENU ── */
+    .nav-hamburger {
+      display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;
+      padding:0; z-index:301;
+    }
+    .nav-hamburger span {
+      width:24px; height:2px; background:var(--white); border-radius:1px;
+      transition:all .3s ease;
+    }
+    .nav-hamburger.active span:nth-child(1) {
+      transform:rotate(45deg) translate(10px,10px);
+    }
+    .nav-hamburger.active span:nth-child(2) {
+      opacity:0;
+    }
+    .nav-hamburger.active span:nth-child(3) {
+      transform:rotate(-45deg) translate(7px,-7px);
+    }
+    .nav-menu-mobile {
+      display:none; position:fixed; top:64px; left:0; right:0; z-index:299;
+      background:rgba(7,46,81,0.98); padding:1rem; flex-direction:column;
+      gap:1rem; backdrop-filter:blur(14px);
+    }
+    .nav-menu-mobile.active {
+      display:flex;
+    }
+    .nav-menu-mobile a {
+      font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:500;
+      color:rgba(255,255,255,0.7); text-decoration:none; padding:0.75rem 1rem;
+      border-radius:3px; transition:color .2s, background .2s;
+    }
+    .nav-menu-mobile a:hover {
+      background:rgba(173,220,255,0.1); color:var(--sky);
+    }
+    .nav-menu-mobile .nav-catalog {
+      background:var(--gold) !important; color:var(--white) !important; margin-top:0.5rem;
+    }
 
     /* ── SHARED ── */
     .eyebrow {
@@ -362,12 +400,17 @@
 
     /* ── RESPONSIVE ── */
     @media(max-width:960px){
-      nav{padding:0 1.5rem;} .nav-links{display:none;}
-      #inicio,#mate,#contacto{grid-template-columns:1fr; min-height:auto;}
+      nav{padding:0 1.5rem;} 
+      .nav-links{display:none;}
+      .nav-hamburger{display:flex;}
+      #inicio,#mate,#contacto,#personalizados{grid-template-columns:1fr; min-height:auto;}
       .inicio-right{min-height:55vw; grid-template-columns:1fr 1fr; grid-template-rows:repeat(2,1fr);}
-      .inicio-left,.mate-content,.contacto-left,.contacto-right{padding:3rem 1.5rem;}
+      .inicio-left,.mate-content,.personalizados-content,.contacto-left,.contacto-right{padding:3rem 1.5rem;}
       #horeca,#horeca-productos{padding:3rem 1.5rem;}
-      .mate-visual{height:55vw; min-height:auto;}
+      .personalizados-visual{height:auto; min-height:auto;}
+      .personalizados-visual img{object-fit:contain; width:100%; height:auto;}
+      .mate-visual{height:auto; min-height:auto;}
+      .mate-visual img{object-fit:contain; width:100%; height:auto;}
       .group-grid{grid-template-columns:repeat(3,1fr);}
       .products-grid{grid-template-columns:1fr 1fr;}
       .products-header{flex-direction:column; align-items:flex-start; gap:1.5rem;}
@@ -386,6 +429,11 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo"><img src="/img/Corporativo/Logo.png" alt="Logo Empresa" style="height:40px; width:auto;"></div>
+    <button class="nav-hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#horeca">HORECA</a></li>
@@ -395,6 +443,16 @@
       <li><a href="#contacto" class="nav-catalog">Solicitar catálogo</a></li>
     </ul>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="nav-menu-mobile" id="mobileMenu">
+    <a href="#inicio">Inicio</a>
+    <a href="#horeca">HORECA</a>
+    <a href="#personalizados">PERSONALIZADOS</a>
+    <a href="#mate">Mate</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#contacto" class="nav-catalog">Solicitar catálogo</a>
+  </div>
 
   <!-- ═══════════════════════════ INICIO ═══════════════════════════ -->
   <section id="inicio">
@@ -796,8 +854,26 @@
     </div>
   </section>
 
-  <!-- NAV ACTIVE STATE -->
+  <!-- NAV ACTIVE STATE & HAMBURGER MENU -->
   <script>
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+    
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-menu-mobile a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Nav active state on scroll
     const sections = document.querySelectorAll('section[id]');
     const links = document.querySelectorAll('.nav-links a:not(.nav-catalog)');
     const observer = new IntersectionObserver((entries) => {
@@ -817,4 +893,5 @@
 
   </body>
   </html>
+
 
