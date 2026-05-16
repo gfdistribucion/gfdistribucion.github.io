@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
   <html lang="es">
   <head>
   <meta charset="UTF-8">
@@ -232,6 +232,29 @@
     }
     .btn-sm:hover { background:var(--gold-lt); }
 
+    /* ── PERSONALIZADOS ── */
+    #personalizados {
+      min-height:100vh; padding-top:64px;
+      background:var(--white);
+      display:grid; grid-template-columns:1fr 1fr;
+    }
+    .personalizados-visual { position:relative; overflow:hidden; min-height:500px; }
+    .personalizados-visual img {
+      width:100%; height:100%; object-fit:cover;
+      transition:filter .5s;
+    }
+    .personalizados-visual-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to left,rgba(7,46,81,0.12),transparent);
+      pointer-events:none;
+    }
+    .personalizados-content {
+      display:flex; flex-direction:column; justify-content:center;
+      padding:5rem 4.5rem 5rem 4rem;
+      border-right:1px solid var(--border);
+    }
+    .personalizados-content .page-desc { margin-bottom:2.5rem; max-width:420px; }
+
     /* ── MATE ── */
     #mate {
       min-height:100vh; padding-top:64px;
@@ -366,6 +389,7 @@
     <ul class="nav-links">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#horeca">HORECA</a></li>
+      <li><a href="#personalizados">PERSONALIZADOS</a></li>
       <li><a href="#mate">Mate</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="#contacto" class="nav-catalog">Solicitar catálogo</a></li>
@@ -396,7 +420,7 @@
     <div class="horeca-header">
       <div class="eyebrow">Canal HORECA</div>
       <h2 class="page-title">Todo lo que necesita<br>tu establecimiento</h2>
-      <p class="page-desc" style="max-width:520px">Gama completa de desechables para hostelería. Desde vasos y packaging hasta papel higiénico — todas las categorías cubiertas en un único proveedor.</p>
+      <p class="page-desc" style="max-width:520px">Gama completa de desechables para hostelería. Desde vasos y packaging, hasta bolsas para transporte — todas las categorías cubiertas en un único proveedor. </p>
     </div>
 
     <div class="group-grid">
@@ -448,7 +472,7 @@
         <!-- Cucharilla icon -->
         <img src="/img/Productos/Cucharilla.jpg" alt="Cucharillas" class="group-card-photo">
         <div class="group-label">Mesa</div>
-        <div class="group-name">Cucharillas</div>
+        <div class="group-name">Cubiertos</div>
       </div>
 
       <div class="group-card">
@@ -644,6 +668,22 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════ PERSONALIZADOS ═══════════════════════════ -->
+  <section id="personalizados">
+    <div class="personalizados-content">
+      <div class="eyebrow">Personalización</div>
+      <h2 class="page-title">Personaliza tus productos</h2>
+      <p class="page-desc">Si necesita personalizar los productos para su negocio, disponemos de distintas opciones de impresión. Vasos, servilletas, bolsas, envases, manteles y muchos otros productos son aptos para incluir logos, frases o gráficos. Con excelente calidad de impresión y tiempos de entrega adaptados a tus necesidades.</p>
+      <div class="mate-note" style="margin-top:2rem;">
+        Consulte por las opciones de personalización
+      </div>
+    </div>
+    <div class="personalizados-visual">
+      <img src="img/Productos/Personalizados.png" alt="Productos personalizados">
+      <div class="personalizados-visual-overlay"></div>
+    </div>
+  </section>
+
   <!-- ═══════════════════════════ MATE ═══════════════════════════ -->
   <section id="mate">
     <div class="mate-visual">
@@ -732,7 +772,7 @@
     <div class="contacto-left">
       <div class="eyebrow">Contacto</div>
       <h2 class="page-title">Contacto</h2>
-      <p class="page-desc">Para solicitar la lista de precios, consultar disponibilidad o cualquier otra gestión. Escríbenos por WhatsApp o email, o llama al teléfono y te atendemos brindando toda la información que necesites.</p>
+      <p class="page-desc">Para solicitar la lista de precios, consultar disponibilidad, opciones de personalización o cualquier otra gestión. Escríbenos por WhatsApp o email, o llama al teléfono y te atendemos brindando toda la información que necesites.</p>
     </div>
     <div class="contacto-right">
       <div class="contact-methods">
