@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/Corporativo/Icono_web_rounded.png" type="image/png">
+  <link rel="shortcut icon" href="img/Corporativo/Icono_web_rounded.png" type="image/png">
+  <title>Política de privacidad — GF Distribución</title>
+  <meta name="description" content="Política de privacidad del sitio web de GF Distribución.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#072e51">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@300;400;500;600;700&family=Tenor+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-logo"><img src="img/Corporativo/Logo.png" alt="GF Distribución"></div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="horeca.html">HORECA</a></li>
+      <li><a href="mate.html">Mate</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-menu-mobile" id="mobileMenu">
+    <a href="index.html">Inicio</a>
+    <a href="horeca.html">HORECA</a>
+    <a href="mate.html">Mate</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+
+  <main>
+  <section class="legal">
+    <div class="eyebrow">Información legal</div>
+    <h1 class="page-title">Política de privacidad</h1>
+    <div class="legal-content">
+      <h2>1. Responsable del tratamiento</h2>
+      <ul>
+        <li><strong>Responsable:</strong> [COMPLETAR: nombre y apellidos] (GF Distribución)</li>
+        <li><strong>NIF:</strong> [COMPLETAR: NIF]</li>
+        <li><strong>Domicilio:</strong> [COMPLETAR: domicilio]</li>
+        <li><strong>Email de contacto para privacidad:</strong> [COMPLETAR: email]</li>
+      </ul>
+
+      <h2>2. Qué datos tratamos</h2>
+      <p>Este sitio web no tiene formularios ni registro de usuarios. Solo tratamos los datos que nos facilitas cuando te pones en contacto con nosotros por WhatsApp, email o teléfono: nombre, teléfono, email, nombre de tu negocio y el contenido de tu consulta. Si te conviertes en cliente, también los datos necesarios para la facturación y la entrega de los pedidos.</p>
+
+      <h2>3. Para qué los usamos y con qué base legal</h2>
+      <ul>
+        <li><strong>Responder a tus consultas</strong> y enviarte catálogos o presupuestos que nos pidas. Base legal: la aplicación de medidas precontractuales a petición tuya (art. 6.1.b del RGPD).</li>
+        <li><strong>Gestionar la relación comercial</strong>: pedidos, entregas, facturación y atención al cliente. Base legal: la ejecución del contrato (art. 6.1.b del RGPD).</li>
+        <li><strong>Cumplir obligaciones legales</strong>, en particular fiscales y contables. Base legal: obligación legal (art. 6.1.c del RGPD).</li>
+      </ul>
+
+      <h2>4. Cuánto tiempo los conservamos</h2>
+      <p>Los datos de consultas que no llegan a convertirse en una relación comercial se conservan el tiempo necesario para atenderlas. Los datos de clientes se conservan mientras dure la relación comercial y, después, durante los plazos exigidos por la normativa fiscal y mercantil.</p>
+
+      <h2>5. A quién se comunican</h2>
+      <p>No cedemos tus datos a terceros, salvo obligación legal. Para prestar el servicio utilizamos proveedores tecnológicos que pueden tratar datos por nuestra cuenta: Meta (WhatsApp), Google (correo electrónico y fuentes tipográficas de la web), GitHub (alojamiento de la web) y Cloudflare (estadísticas de visitas). Algunos de estos proveedores pueden tratar datos fuera del Espacio Económico Europeo; en ese caso lo hacen con las garantías previstas en el RGPD, como el Marco de Privacidad de Datos UE-EE. UU. o las cláusulas contractuales tipo de la Comisión Europea.</p>
+
+      <h2>6. Estadísticas y cookies</h2>
+      <p>Esta web no utiliza cookies propias ni de terceros con fines analíticos o publicitarios. Para conocer cuántas visitas recibe usamos Cloudflare Web Analytics, que no utiliza cookies ni identifica a los visitantes y ofrece únicamente datos agregados. Para mostrar las tipografías, la web carga fuentes desde los servidores de Google, que reciben la dirección IP de tu dispositivo.</p>
+
+      <h2>7. Tus derechos</h2>
+      <p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a [COMPLETAR: email]. Si consideras que no hemos atendido correctamente tu solicitud, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>).</p>
+
+      <p class="legal-updated">Última actualización: octubre de 2026.</p>
+    </div>
+  </section>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-menu-mobile a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+  </script>
+  </main>
+  <footer class="site-footer-bar">
+    <div class="footer-brand">© 2026 GF Distribución · Barcelona · Distribución mayorista</div>
+    <div class="footer-links">
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Política de privacidad</a>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "10fd7c5ad9a94ca0a3859188e8e84e08"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

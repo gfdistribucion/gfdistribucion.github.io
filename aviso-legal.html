@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/Corporativo/Icono_web_rounded.png" type="image/png">
+  <link rel="shortcut icon" href="img/Corporativo/Icono_web_rounded.png" type="image/png">
+  <title>Aviso legal — GF Distribución</title>
+  <meta name="description" content="Aviso legal y condiciones de uso del sitio web de GF Distribución.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#072e51">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@300;400;500;600;700&family=Tenor+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-logo"><img src="img/Corporativo/Logo.png" alt="GF Distribución"></div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="horeca.html">HORECA</a></li>
+      <li><a href="mate.html">Mate</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-menu-mobile" id="mobileMenu">
+    <a href="index.html">Inicio</a>
+    <a href="horeca.html">HORECA</a>
+    <a href="mate.html">Mate</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+
+  <main>
+  <section class="legal">
+    <div class="eyebrow">Información legal</div>
+    <h1 class="page-title">Aviso legal y condiciones de uso</h1>
+    <div class="legal-content">
+      <h2>1. Datos identificativos</h2>
+      <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI), se informa de los datos del titular de este sitio web:</p>
+      <ul>
+        <li><strong>Titular:</strong> [COMPLETAR: nombre y apellidos], que opera con el nombre comercial GF Distribución.</li>
+        <li><strong>NIF:</strong> [COMPLETAR: NIF]</li>
+        <li><strong>Domicilio:</strong> [COMPLETAR: domicilio]</li>
+        <li><strong>Email:</strong> [COMPLETAR: email]</li>
+        <li><strong>Teléfono:</strong> +34 613 06 19 60</li>
+        <li><strong>Actividad:</strong> distribución mayorista de consumibles para hostelería y comercios.</li>
+      </ul>
+
+      <h2>2. Objeto del sitio web</h2>
+      <p>Este sitio web tiene carácter informativo: presenta los productos y servicios de GF Distribución a negocios y profesionales. A través de esta web no se realizan ventas ni se formalizan contratos. Los pedidos, presupuestos y condiciones comerciales se gestionan directamente con el titular por WhatsApp, email o teléfono.</p>
+
+      <h2>3. Condiciones de uso</h2>
+      <p>El acceso a este sitio web es libre y gratuito. Al navegar por él, el usuario se compromete a hacer un uso adecuado de sus contenidos, conforme a la ley, la buena fe y estas condiciones, y a no emplearlos para fines ilícitos o que puedan dañar los derechos de terceros o el funcionamiento del sitio.</p>
+
+      <h2>4. Propiedad intelectual e industrial</h2>
+      <p>Los textos, el diseño del sitio, el logotipo y el nombre comercial GF Distribución pertenecen a su titular. Queda prohibida su reproducción, distribución o modificación sin autorización previa. Las marcas, nombres comerciales e imágenes de productos de terceros que puedan aparecer en el sitio pertenecen a sus respectivos titulares y se muestran únicamente con fines informativos.</p>
+
+      <h2>5. Responsabilidad</h2>
+      <p>La información sobre productos publicada en este sitio es orientativa. La disponibilidad, las características, las cantidades mínimas y los precios se confirman en el momento de solicitar el pedido o el presupuesto. El titular no se hace responsable de posibles errores u omisiones en los contenidos ni de las interrupciones o fallos técnicos que puedan afectar al acceso al sitio.</p>
+
+      <h2>6. Enlaces a terceros</h2>
+      <p>Este sitio contiene enlaces a servicios de terceros, como WhatsApp. El titular no controla ni se responsabiliza de los contenidos, políticas o prácticas de esos servicios, que se rigen por sus propias condiciones.</p>
+
+      <h2>7. Legislación aplicable</h2>
+      <p>Estas condiciones se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Barcelona, salvo que la normativa aplicable establezca otro fuero.</p>
+
+      <p class="legal-updated">Última actualización: octubre de 2026.</p>
+    </div>
+  </section>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-menu-mobile a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+  </script>
+  </main>
+  <footer class="site-footer-bar">
+    <div class="footer-brand">© 2026 GF Distribución · Barcelona · Distribución mayorista</div>
+    <div class="footer-links">
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Política de privacidad</a>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "10fd7c5ad9a94ca0a3859188e8e84e08"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
