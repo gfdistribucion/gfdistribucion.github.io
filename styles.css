@@ -1241,3 +1241,24 @@ main > section.legal {
     text-align: center;
   }
 }
+
+/* Inicio: título más contenido y separación con las fotos */
+#inicio {
+  column-gap: var(--space-lg);
+}
+
+.inicio-title {
+  font-size: clamp(2.3rem, 3.2vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: 1.6rem;
+  max-width: 20ch;
+}
+
+.inicio-desc {
+  max-width: 520px;
+}
+
+.inicio-meta {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
