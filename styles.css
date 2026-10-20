@@ -1262,3 +1262,76 @@ main > section.legal {
   margin-top: 2rem;
   padding-top: 1.5rem;
 }
+
+/* ===== Jerarquía de títulos e inicio con más peso ===== */
+/* Títulos de sección (h2) un escalón por debajo del título de cada página (h1) */
+h2.page-title {
+  font-size: clamp(1.9rem, 2.6vw, 2.8rem);
+}
+
+/* Inicio: el título más grande de la web y columna de texto algo más ancha */
+#inicio {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+}
+
+.inicio-title {
+  font-size: clamp(2.6rem, 4.2vw, 3.8rem);
+  line-height: 1.06;
+  max-width: none;
+  margin-bottom: 1.75rem;
+}
+
+.inicio-desc {
+  font-size: 1.02rem;
+  max-width: 560px;
+}
+
+.inicio-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2.2rem;
+}
+
+.inicio-cta .btn-primary,
+.btn-secondary {
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+}
+
+.btn-secondary {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--navy);
+  text-decoration: none;
+  border: 1px solid rgba(7,46,81,0.3);
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  transition: border-color .2s, background .2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--navy);
+  background: rgba(7,46,81,0.04);
+}
+
+/* Email y teléfono en ordenador: aviso al copiar */
+.citem.is-copied {
+  border-color: var(--gold);
+}
+
+@media (max-width: 960px) {
+  #inicio {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Inicio: mismo aire bajo la barra superior que el resto de páginas */
+@media (min-width: 961px) {
+  #inicio {
+    padding-top: 7.5rem;
+    padding-bottom: var(--space-xxl);
+    min-height: auto;
+  }
+}
